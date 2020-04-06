@@ -27,9 +27,16 @@ class BaiduBaikePipeline(object):
         self.connection.close()
 
     def process_item(self, item, spider):
-        self.cur.execute(
-            "INSERT INTO scrapy_items(source_name,source_word,source_url,category_id,category_name,context) VALUES(%s,%s,%s,%s,%s,%s); ",
-            (item['source_name'], item['source_word'], item['source_url'], item['category_id'], item['category_name'],
-             item['context']))
-        self.connection.commit()
+        flag = True
+        if flag:
+            try:
+                self.cur.execute(
+                    "INSERT INTO scrapy_items(source_name,source_word,source_url,category_id,category_name,context) VALUES(%s,%s,%s,%s,%s,%s); ",
+                    (item['source_name'], item['source_word'], item['source_url'], item['category_id'], item['category_name'],item['context']))
+            except Exception as e:
+                print("错误",e)
+
+            self.connection.commit()
+        else:
+            print('测试')
         return item
