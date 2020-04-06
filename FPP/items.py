@@ -16,13 +16,16 @@ class FPPItem(Item):
 
 
 class BaiduBaike(Item):
-    # 一级标题 如：玉米
-    title = Field()
-    # 二级标题 如：（玉米）种植技术
-    # title_h2 = Field()
-    # # 三级标题 如：（玉米）（种植技术）选用优良品种
-    # title_h3 = Field()
+    # 搜索来源 如：百度百科
+    source_name = Field()
+    # 搜索词 如：玉米
+    source_word = Field()
+    # 搜索url
+    source_url = Field()
+    # 类别id
+    category_id = Field()
+    # 类别 如：玉米的形态特征、分布范围等
+    category_name = Field()
     # 主要内容
     context = Field()
-    # 文章中的url字段，暂时不添加
     pass

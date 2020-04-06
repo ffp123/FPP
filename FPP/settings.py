@@ -66,6 +66,7 @@ ROBOTSTXT_OBEY = False
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'FPP.pipelines.FPPPipeline': 300,
+   'FPP.pipelines.BaiduBaikePipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
