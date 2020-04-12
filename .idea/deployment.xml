@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Copy of project-level server '东京云'">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Copy of project-level server '东京云'" uploadOnCheckin="60a5fbf4-8b6b-4276-af62-60386baae897">
     <serverData>
       <paths name="Copy of project-level server '东京云'">
         <serverdata>
@@ -24,6 +24,7 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="东京云" />
     <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
