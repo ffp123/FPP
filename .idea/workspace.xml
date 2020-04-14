@@ -4,6 +4,8 @@
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +111,8 @@
       <workItem from="1586233405168" duration="394000" />
       <workItem from="1586332252808" duration="14000" />
       <workItem from="1586591599055" duration="2881000" />
-      <workItem from="1586659502396" duration="493000" />
+      <workItem from="1586659502396" duration="10535000" />
+      <workItem from="1586830835347" duration="529000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>

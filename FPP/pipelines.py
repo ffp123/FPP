@@ -20,14 +20,14 @@ class FPPPipeline(object):
 
 class BaiduBaikePipeline(object):
     def __init__(self):
-        self.connection = psycopg2.connect(host="localhost", user="postgres", password="106250", dbname="FPP")
+        self.connection = psycopg2.connect(host="172.31.42.206", user="postgres", password="postgres", dbname="fpp")
         self.cur = self.connection.cursor()
         redis_db.flushdb()  # 清空当前数据库中的所有 key，为了后面将mysql数据库中的数据全部保存进去
         # print(redis_db)
         if redis_db.hlen(redis_data_dict) == 0:  # 判断redis数据库中的key，若不存在就读取mysql数据并临时保存在redis中
-            sql = 'select context from scrapy_items'  # 查询表中的现有数据
+            sql = 'select context from zhparser.scrapy_items'  # 查询表中的现有数据
             df = pandas.read_sql(sql, self.connection)  # 读取mysql中的数据
-            print(df)
+            # print(df)
             for context in df['context'].values:
                 redis_db.hset(redis_data_dict, context, 0)  # 把每个url写入field中，value值随便设，我设置的0  key field value 三者的关系
 
@@ -47,7 +47,7 @@ class BaiduBaikePipeline(object):
         if flag:
             try:
                 self.cur.execute(
-                    "INSERT INTO scrapy_items(source_name,source_word,source_url,category_id,category_name,context) VALUES(%s,%s,%s,%s,%s,%s); ",
+                    "INSERT INTO zhparser.scrapy_items(source_name,source_word,source_url,category_id,category_name,context) VALUES(%s,%s,%s,%s,%s,%s); ",
                     (item['source_name'], item['source_word'], item['source_url'], item['category_id'], item['category_name'],item['context']))
             except Exception as e:
                 print("错误",e)
