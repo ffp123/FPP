@@ -5,8 +5,11 @@
       <paths name="Copy of project-level server '东京云'">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/ubuntu/Python/FPP" local="$PROJECT_DIR$" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath path="/home" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="turw">
