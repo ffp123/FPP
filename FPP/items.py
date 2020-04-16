@@ -28,4 +28,24 @@ class BaiduBaike(Item):
     category_name = Field()
     # 主要内容
     context = Field()
-    pass
+
+
+class BaidubceItem(Item):
+    # 类名 如： 农产品期货
+    class_name = Field()
+    # 期货名称 如： 玉米
+    future_name = Field()
+    # 类别id
+    category_id = Field()
+    # 类别 如：玉米的国内外消费情况等
+    category_name = Field()
+    # 主要内容
+    context = Field()
+    # 百度分词情况
+    fenci = Field()
+    # 百度词性标注情况
+    cixin = Field()
+    # 百度实体识别情况
+    shiti = Field()
+    # nz名词
+    nz_word = Field()

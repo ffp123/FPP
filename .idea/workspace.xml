@@ -2,16 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidubce.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/tmoom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/data/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/data/农产品期货.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/data/金属期货.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/utils/rw_excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubce.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/test.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -42,8 +59,16 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/FPP/data" />
     <property name="settings.editor.selected.configurable" value="preferences.remoteExternalTools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\data" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -112,7 +137,11 @@
       <workItem from="1586332252808" duration="14000" />
       <workItem from="1586591599055" duration="2881000" />
       <workItem from="1586659502396" duration="10535000" />
-      <workItem from="1586830835347" duration="7069000" />
+      <workItem from="1586830835347" duration="8549000" />
+      <workItem from="1586913893967" duration="2125000" />
+      <workItem from="1586916706899" duration="845000" />
+      <workItem from="1586921714471" duration="7772000" />
+      <workItem from="1587000644148" duration="11196000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
