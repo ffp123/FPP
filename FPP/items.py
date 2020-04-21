@@ -49,3 +49,5 @@ class BaidubceItem(Item):
     shiti = Field()
     # nz名词
     nz_word = Field()
+    # 分词词频统计
+    count_word = Field()

@@ -91,9 +91,9 @@ class BaidubcePipline(object):
         if flag:
             try:
                 self.cur.execute(
-                    "INSERT INTO shouce_baidubce(class_name,future_name,category_id,category_name,context,fenci,cixin,shiti,nz_word) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s); ",
+                    "INSERT INTO shouce_baidubce(class_name,future_name,category_id,category_name,context,fenci,cixin,shiti,nz_word,count_word) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s); ",
                     (item['class_name'], item['future_name'], item['category_id'], item['category_name'],
-                     item['context'], item['fenci'], item['cixin'], item['shiti'], item['nz_word']))
+                     item['context'], item['fenci'], item['cixin'], item['shiti'], item['nz_word'], item['count_word']))
             except Exception as e:
                 print("错误", e)
 

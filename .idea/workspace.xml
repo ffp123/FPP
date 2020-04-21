@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidubce.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/data/shouce_baidubce.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/结果比较.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/data/结果比较.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubce.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/utils/NLP_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/utils/NLP_api.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +47,11 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.remoteExternalTools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\data" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -113,6 +121,8 @@
       <workItem from="1586591599055" duration="2881000" />
       <workItem from="1586659502396" duration="10535000" />
       <workItem from="1586830835347" duration="7069000" />
+      <workItem from="1587389220479" duration="1288000" />
+      <workItem from="1587432966326" duration="6348000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>

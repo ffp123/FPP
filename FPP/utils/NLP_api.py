@@ -5,10 +5,14 @@
 @File        : NLP_api.py
 @Description : 使用NLP_API进行词性标注、分词、实体识别
 """
+import ast
+import collections
+import json
 import sys
 import pandas as pd
 import os
 from pyltp import Segmentor, Postagger, NamedEntityRecognizer
+import pkuseg
 
 sys.path.append("../..")
 from FPP.utils.rw_excel import write_to_excel, read_from_excel
@@ -20,6 +24,27 @@ class Baidu_API(object):
 
     def get_yuanwen(self, excel_path, from_sheet):
         return pd.read_excel(excel_path, from_sheet).iloc[:, 0:4]
+
+
+class PKUSEG(object):
+    def __init__(self, excel_path, from_sheet):
+        self.result_df = self.get_data(excel_path, from_sheet)
+
+    def get_data(self, excel_path, from_sheet):
+        df = pd.read_excel(excel_path, from_sheet).loc[:, ['id', '语料原文']]
+        data = pd.DataFrame(columns=['id', '语料原文', '分词结果', '词性标注', '实体识别', 'nz_名词'], index=[i for i in range(len(df))])
+        data.loc[:, ['id', '语料原文']] = df
+        return data
+
+    def fenci(self):
+        seg = pkuseg.pkuseg(postag=True)  # 以默认配置加载模型
+        for item in self.result_df.itertuples():
+            word = getattr(item, '语料原文')
+            # self.result_df.loc[self.result_df['id'] == getattr(item, 'id'), '分词结果'] = '\t'.join(seg.cut(word))
+            print(seg.cut(word))
+
+    def run(self):
+        self.fenci()
 
 
 class LTP(object):
@@ -95,11 +120,31 @@ class LTP(object):
 
 if __name__ == "__main__":
     excel_path = "../data/结果比较.xlsx"
-    from_sheet = '原文'
+    from_sheet = '对照'
     # badiu_api = Baidu_API(excel_path, from_sheet)
     # print(badiu_api.yuanwen)
-    LTP_DATA_DIR = 'D:/study_data/graduate_content/Futures/ltp_data_v3.4.0'  # ltp模型目录的路径
+    # ---------------LTP分词----------------------#
+    # LTP_DATA_DIR = 'D:/study_data/graduate_content/Futures/ltp_data_v3.4.0'  # ltp模型目录的路径
+    # ltp = LTP(LTP_DATA_DIR, excel_path, from_sheet)
+    # ltp.run()
+    # write_to_excel(ltp.result_df, excel_path, sheet_name='LTP')
+    # ---------------PKU分词----------------------#
+    # pku = PKUSEG(excel_path, from_sheet)
+    # pku.run()
+    df = pd.read_excel(excel_path,from_sheet)
+    df['Count'] = None
+    lists = []
+    for item in df.itertuples():
+        count_baidu = getattr(item,'Count_baidu')
+        print(eval(count_baidu))
+        # word = getattr(item, '分词结果').split('\t')
+        # count = collections.Counter(word)
+        # lists.append(count)
+    #     df.loc[df['id'] == getattr(item, 'id'), 'Count'] = str(dict(count))
+    #     print(count)
+    # write_to_excel(df,excel_path,from_sheet)
+    # sums = collections.Counter()
+    # for c in lists:
+    #     sums = sums+c
+    # print(str(dict(sums)))
 
-    ltp = LTP(LTP_DATA_DIR, excel_path, from_sheet)
-    ltp.run()
-    write_to_excel(ltp.result_df, excel_path, sheet_name='LTP')

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import collections
 import json
 import sys
 import scrapy
@@ -47,19 +48,27 @@ class BaidubceSpider(scrapy.Spider):
         item['category_id'] = response.meta['category_id']
         item['category_name'] = response.meta['category_name']
         item['context'] = json.loads(response.text)['text']
-        item['fenci'], item['cixin'], item['shiti'], item['nz_word'] = [], [], [], []
+        item['fenci'], item['cixin'], item['shiti'], item['nz_word'], item['count_word'] = [], [], [], [], []
         res = json.loads(response.text)['items']
         for i in range(len(res)):
             item["fenci"].append(res[i]['item'])
+            if res[i]['pos'] == '':
+                item["cixin"].append(res[i]['ne'])
             item["cixin"].append(res[i]['pos'])  # 词性为nz的应该是需要主要的名词
             if res[i]['ne'] != '':
                 item['shiti'].append(res[i]['item'])
             if res[i]['pos'] in ['nz'] and res[i]['item'] not in item['nz_word']:
                 item['nz_word'].append(res[i]['item'])
-                # t = i
-                #
-                # while items[t]['pos'] != 'v':
-                #     t = t - 1
-                # cixin_nz.append(('玉米', items[t]['item'], items[i]['item']))
+        item['count_word'] = json.dumps(collections.Counter(item['fenci']),ensure_ascii=False)
+        item['fenci'] = '\t'.join(item['fenci'])
+        item['cixin'] = '\t'.join(item['cixin'])
+        item['shiti'] = '\t'.join(item['shiti'])
+        item['nz_word'] = '\t'.join(item['nz_word'])
+
+        # t = i
+        #
+        # while items[t]['pos'] != 'v':
+        #     t = t - 1
+        # cixin_nz.append(('玉米', items[t]['item'], items[i]['item']))
         print(item)
         yield item
