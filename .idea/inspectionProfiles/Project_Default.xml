@@ -31,6 +31,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="read_write_excel" />
+          <option value="utils.excel2text.rw_excel" />
         </list>
       </option>
     </inspection_tool>

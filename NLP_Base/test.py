@@ -18,7 +18,7 @@ if __name__ == '__main__':
     sheet_names = xl.sheet_names[:-1]
     df = read_from_excel(excel_path,sheet_names)
     print(df)
-    # f2 = open("../docs/test.txt", "r")
+    # f2 = open("../docs/stopwords.txt", "r")
     # lines = f2.readlines()
     #
     # for line in lines:
