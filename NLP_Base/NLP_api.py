@@ -5,17 +5,16 @@
 @File        : NLP_api.py
 @Description : 使用NLP_API进行词性标注、分词、实体识别
 """
-import ast
-import collections
-import json
-import sys
-import pandas as pd
 import os
-from pyltp import Segmentor, Postagger, NamedEntityRecognizer
-import pkuseg
+import sys
 
-sys.path.append("../..")
-from FPP.utils.rw_excel import write_to_excel, read_from_excel
+sys.path.append("..")
+import pandas as pd
+import pkuseg
+from pyltp import Segmentor, Postagger, NamedEntityRecognizer
+
+from utils.rw_excel import write_to_excel
+
 
 
 class Baidu_API(object):
@@ -119,7 +118,7 @@ class LTP(object):
 
 
 if __name__ == "__main__":
-    excel_path = "../data/结果比较.xlsx"
+    excel_path = "../docs/期货词频统计/结果比较.xlsx"
     from_sheet = '对照'
     # badiu_api = Baidu_API(excel_path, from_sheet)
     # print(badiu_api.yuanwen)

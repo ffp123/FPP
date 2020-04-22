@@ -2,13 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/NLP_Base/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/shouce_baidubce.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/农产品期货.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/期货词频统计/农产品期货.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/农产品期货.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/期货词频统计/期货词频统计.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货词频统计/期货词频统计.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/期货词频统计/能源期货.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/能源期货.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/期货词频统计/金属期货.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/金属期货.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/结果比较.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货词频统计/结果比较.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/data/金属期货.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/NER.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/NER.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubce.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/utils/NLP_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/NLP_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/utils/rw_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/rw_excel.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -44,7 +69,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\data" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\NLP_Base" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\utils" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\data\期货词频统计" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\data\期货文档" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -116,7 +145,9 @@
       <workItem from="1586659502396" duration="10535000" />
       <workItem from="1586830835347" duration="7069000" />
       <workItem from="1587389220479" duration="1288000" />
-      <workItem from="1587432966326" duration="7129000" />
+      <workItem from="1587432966326" duration="7951000" />
+      <workItem from="1587474460225" duration="810000" />
+      <workItem from="1587521197821" duration="14024000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
@@ -132,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586659724590</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="分词完成">
+      <created>1587448096246</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587448096246</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +195,8 @@
     <MESSAGE value="结构爬取" />
     <MESSAGE value="结构爬取1" />
     <MESSAGE value="完成远程连接" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成远程连接" />
+    <MESSAGE value="分词完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="分词完成" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FPP$baidubaike.coverage" NAME="baidubaike Coverage Results" MODIFIED="1586145716394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FPP/spiders" />

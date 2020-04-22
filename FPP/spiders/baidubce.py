@@ -8,7 +8,7 @@ import pandas as pd
 from FPP.items import BaidubceItem
 
 sys.path.append("../..")
-from FPP.utils.rw_excel import write_to_excel, read_from_excel
+from utils.rw_excel import read_from_excel
 
 
 class BaidubceSpider(scrapy.Spider):
@@ -29,7 +29,7 @@ class BaidubceSpider(scrapy.Spider):
         #     formdata={"grant_type": "client_credentials","client_id":"gOM62tcafM4Sbp3lKRt0RTcF","client_secret":"7TCwmtIsTKvoBznPwXSFG0kkjsr0Iqad"},
         #     callback=self.parse_page
         # )
-        excel_path = '../data/金属期货.xlsx'
+        excel_path = '../../docs/期货文档/金属期货.xlsx'
         class_name = '金属期货'
         xl = pd.ExcelFile(excel_path)
         sheet_names = xl.sheet_names[:-1]

@@ -9,17 +9,16 @@ import sys
 
 sys.path.append("../..")
 
-from FPP.utils.rw_excel import write_to_excel, read_from_excel
+from utils.rw_excel import read_from_excel
 import pandas as pd
-import json
 
 if __name__ == '__main__':
-    excel_path = '../data/农产品期货.xlsx'
+    excel_path = '../docs/农产品期货.xlsx'
     xl = pd.ExcelFile(excel_path)
     sheet_names = xl.sheet_names[:-1]
     df = read_from_excel(excel_path,sheet_names)
     print(df)
-    # f2 = open("../data/test.txt", "r")
+    # f2 = open("../docs/test.txt", "r")
     # lines = f2.readlines()
     #
     # for line in lines:
