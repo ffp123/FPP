@@ -8,6 +8,14 @@
 import pandas as pd
 from openpyxl import load_workbook
 
+def get_sheet_name(excel_path):
+    sheet_names = []
+    if isinstance(excel_path,str):
+        excel_path = list(excel_path)
+    for excel in excel_path:
+        xl = pd.ExcelFile(excel)
+        sheet_names = xl.sheet_names[1:]
+    return sheet_names
 
 def read_from_excel(excelPath, sheet_name):
     if isinstance(sheet_name, str):

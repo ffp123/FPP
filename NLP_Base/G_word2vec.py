@@ -15,6 +15,8 @@ from sklearn.cluster import DBSCAN, KMeans
 import matplotlib
 from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
 
 file_prox = '../docs/'
 
@@ -95,27 +97,45 @@ class G_Word2Vec(object):
         model.wv.save_word2vec_format('models/word2vec.vector')
         print(model)
 
-    def julei(self):
+    def julei_3D(self):
         model = Word2Vec.load('models/word2vec_100.model')
-        vectors = [model[word] for word in model.wv.index2word]
-        vectors = sample(vectors, 200)
+        words = sample(model.wv.index2word, 200)
+        vectors = [model[word] for word in words]
+        tsne = TSNE(n_components=3)
+        vectors = tsne.fit_transform(vectors)
+
+        # pca = PCA(n_components=3)
+        # vectors = pca.fit_transform(vectors)
         # ----------------------------------词向量聚类----------------------------------
-
         # 基于密度的DBSCAN聚类
-
         # labels = DBSCAN(eps=0.24, min_samples=3).fit(vectors).labels_
         labels = KMeans(n_clusters=4).fit(vectors).labels_
-        print(labels)
         plt.rcParams['font.sans-serif'] = ['SimHei']  # 显示中文
         matplotlib.rcParams['axes.unicode_minus'] = False  # 显示负号
         fig = plt.figure()
         ax = mplot3d.Axes3D(fig)  # 创建3d坐标轴
         colors = ['red', 'blue', 'green','black']  # 分为三类
         # 绘制散点图 词语 词向量 类标(颜色)
-        for word, vector, label in zip(model.wv.index2word, vectors, labels):
+        for word, vector, label in zip(words, vectors, labels):
             ax.scatter(vector[0], vector[1], vector[2], c=colors[label], s=30, alpha=0.3)
             ax.text(vector[0], vector[1], vector[2], word, ha='center', va='center')
         plt.show()
+    def julei_2D(self):
+        model = Word2Vec.load('models/word2vec_100.model')
+        words = sample(model.wv.index2word, 200)
+        vectors = [model[word] for word in words]
+        tsne = TSNE(n_components=2)
+        vectors = tsne.fit_transform(vectors)
+        # pca = PCA(n_components=2)
+        # vectors = pca.fit_transform(vectors)
+        # 可视化展示
+        plt.rcParams['font.sans-serif'] = ['SimHei']  # 显示中文
+        matplotlib.rcParams['axes.unicode_minus'] = False  # 显示负号
+        plt.scatter(vectors[:, 0], vectors[:, 1])
+        for i, word in enumerate(words):
+            plt.annotate(word, xy=(vectors[i, 0], vectors[i, 1]))
+        plt.show()
+
 
     def predict(self):
         # model = KeyedVectors.load_word2vec_format('D:\study_data\graduate_content\Futures\sgns.baidubaike.bigram-char', binary=False, unicode_errors='ignore')
@@ -138,10 +158,10 @@ class G_Word2Vec(object):
 
     def run(self):
         # self.jieba_cut()
-        self.train()
+        # self.train()
         # self.update_train()
-        # self.julei()
-        self.predict()
+        self.julei_2D()
+        # self.predict()
 
 
 
@@ -151,7 +171,7 @@ if __name__ == "__main__":
     #     '要坚持规划先行，立足高起点、高标准、高质量，科学规划园区组团，提升公共服务水平，',
     #     ]
     sentences_list = []
-    for fi in ['农产品期货','能源期货','金属期货']:
+    for fi in ['农产品期货','能源期货','金属期货','scrapy_items']:
         for line in open('../docs/期货文档/'+fi+'.txt',encoding='utf-8').readlines():
             sentences_list.append(line.strip())
     G_word = G_Word2Vec(sentences_list)

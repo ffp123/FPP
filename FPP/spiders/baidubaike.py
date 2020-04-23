@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 import re
-
+import sys
 import scrapy
 from FPP.items import BaiduBaike
 from scrapy import Request
+import pandas as pd
 
 
 class BaiDuItem(scrapy.Spider):
@@ -15,9 +16,12 @@ class BaiDuItem(scrapy.Spider):
     header = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
     }
+    excel_path = '../../docs/期货文档/金属期货.xlsx'
+    xl = pd.ExcelFile(excel_path)
+    word_list = xl.sheet_names[:-1]
     # word_list = ['玉米','大豆']
-    word_list = ['棕榈油', '玉米', '玉米淀粉', '乙二醇', '纤维板', '铁矿石', '聚丙烯', '梗米', '焦炭', '焦煤', '胶合板', '黄大豆', '豆油', '豆粨', '苯乙烯',
-                 'PVC', 'LLDPE','纸浆']
+    # word_list = ['棕榈油', '玉米', '玉米淀粉', '乙二醇', '纤维板', '铁矿石', '聚丙烯', '梗米', '焦炭', '焦煤', '胶合板', '黄大豆', '豆油', '豆粨', '苯乙烯',
+    #              'PVC', 'LLDPE','纸浆']
 
     def start_requests(self):
         for word in self.word_list:
