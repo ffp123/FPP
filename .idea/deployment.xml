@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Copy of project-level server '东京云'" uploadOnCheckin="60a5fbf4-8b6b-4276-af62-60386baae897">
+  <component name="PublishConfigData" autoUpload="Always" serverName="东京云" uploadOnCheckin="60a5fbf4-8b6b-4276-af62-60386baae897">
     <serverData>
-      <paths name="Copy of project-level server '东京云'">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-          <excludedPaths>
-            <excludedPath path="/home" />
-          </excludedPaths>
-        </serverdata>
-      </paths>
       <paths name="turw">
         <serverdata>
           <mappings>

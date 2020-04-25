@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/scrapy_items.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/scrapy_items.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/G_similar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/jieba_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/models/yian_word2vec_100.model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/models/yian_word2vec_100.vector" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/char_N_20190215.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/分词结果/yian_data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/症状词标准化结果.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/models/word2vec_100.model" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/models/word2vec_100.model" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/models/word2vec_100.vector" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/models/word2vec_100.vector" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/分词结果/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/分词结果/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/rw_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/rw_excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/期货文档/农产品期货.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/农产品期货.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/期货文档/能源期货.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/能源期货.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/期货词频统计/期货词频统计.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货词频统计/期货词频统计.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +63,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.remoteExternalTools" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/期货词频统计" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -65,6 +73,10 @@
       <recent name="D:\study_data\graduate_content\Futures\FPP\utils" />
       <recent name="D:\study_data\graduate_content\Futures\FPP" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\data\期货词频统计" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\期货词频统计" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -139,7 +151,10 @@
       <workItem from="1587432966326" duration="7951000" />
       <workItem from="1587474460225" duration="810000" />
       <workItem from="1587521197821" duration="24332000" />
-      <workItem from="1587606530400" duration="14365000" />
+      <workItem from="1587606530400" duration="14827000" />
+      <workItem from="1587691768408" duration="2969000" />
+      <workItem from="1587697557040" duration="10566000" />
+      <workItem from="1587780902039" duration="9168000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
@@ -183,6 +198,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/stopwords" />
+    </ignored-roots>
     <MESSAGE value="测试合并" />
     <MESSAGE value="结构爬取" />
     <MESSAGE value="结构爬取1" />
