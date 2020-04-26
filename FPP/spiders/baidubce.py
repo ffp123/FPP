@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
-import collections
-import json
-import sys
-import scrapy
-import pandas as pd
+"""
+@Time        : 2020/4/20 17:47
+@Author      : tmooming
+@File        : baidubce.py
+@Description : 百度分词API接口
+"""
 
+from FPP.spiders import *
 from FPP.items import BaidubceItem
-
-sys.path.append("../..")
-from utils.rw_excel import read_from_excel
 
 
 class BaidubceSpider(scrapy.Spider):
@@ -59,7 +58,7 @@ class BaidubceSpider(scrapy.Spider):
                 item['shiti'].append(res[i]['item'])
             if res[i]['pos'] in ['nz'] and res[i]['item'] not in item['nz_word']:
                 item['nz_word'].append(res[i]['item'])
-        item['count_word'] = json.dumps(collections.Counter(item['fenci']),ensure_ascii=False)
+        item['count_word'] = json.dumps(collections.Counter(item['fenci']), ensure_ascii=False)
         item['fenci'] = '\t'.join(item['fenci'])
         item['cixin'] = '\t'.join(item['cixin'])
         item['shiti'] = '\t'.join(item['shiti'])

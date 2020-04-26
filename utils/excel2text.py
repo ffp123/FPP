@@ -6,9 +6,7 @@
 @Description : 读取excel到text
 """
 import sys
-import pandas as pd
-import numpy as np
-
+from utils import *
 sys.path.append("..")
 from utils.rw_excel import read_from_excel
 

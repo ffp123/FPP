@@ -5,14 +5,12 @@
 @File        : jieba_api.py 
 @Description : jieba分词
 """
-import re
-
-import jieba
-
+from NLP_Base import *
 file_prox = '../docs/'
 
+
 class Jieba_api(object):
-    def __init__(self, sentences_list ):
+    def __init__(self, sentences_list):
         self.stopwords = self.stopwordslist()
         self.sentences_list = sentences_list
 
@@ -46,6 +44,7 @@ class Jieba_api(object):
                 ele = ele + '\n'
                 f.write(ele)
             f.close()
+
 
 if __name__ == "__main__":
     sentences_list = []

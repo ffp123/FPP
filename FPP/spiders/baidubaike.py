@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-import re
-import sys
-import scrapy
-from FPP.items import BaiduBaike
-from scrapy import Request
-import pandas as pd
+"""
+@Time        : 2020/4/20 17:47
+@Author      : tmooming
+@File        : baidubaike.py
+@Description : 爬取百度百科相关数据
+"""
 
+from FPP.spiders import *
 
 class BaiDuItem(scrapy.Spider):
     name = 'baiduitem'
@@ -19,6 +20,7 @@ class BaiDuItem(scrapy.Spider):
     excel_path = '../../docs/期货文档/金属期货.xlsx'
     xl = pd.ExcelFile(excel_path)
     word_list = xl.sheet_names[:-1]
+
     # word_list = ['玉米','大豆']
     # word_list = ['棕榈油', '玉米', '玉米淀粉', '乙二醇', '纤维板', '铁矿石', '聚丙烯', '梗米', '焦炭', '焦煤', '胶合板', '黄大豆', '豆油', '豆粨', '苯乙烯',
     #              'PVC', 'LLDPE','纸浆']
@@ -35,12 +37,12 @@ class BaiDuItem(scrapy.Spider):
         category_id = [i for i in response.xpath(
             "//div[@class='main-content']//div[contains(@class ,'anchor-list')]/a[1]/@name").extract() if
                        not re.match('[a-z]', i)]
-        print(category_id)
+        # print(category_id)
         category_name = response.xpath(
             "//div[@class='main-content']//div[contains(@class ,'anchor-list')]/a[3]/@name").extract()
-        print(category_name)
+        # print(category_name)
         for i in range(1, len(category_id) + 1):
-            print(response.meta['word'])
+            # print(response.meta['word'])
             item = BaiduBaike()
             tes = "./*[count(preceding-sibling::div[contains(@class,'anchor-list')])=" + str(
                 i) + " and not(contains(@class,'anchor-list'))  and contains(@class,'para')]"

@@ -5,25 +5,12 @@
 @File        : G_word2vec.py
 @Description : 使用gensim工具包进行词向量训练
 """
-from random import sample
+import sys
 
-import numpy as np
-import pandas as pd
-from gensim.models import KeyedVectors, word2vec, Word2Vec
-import jieba
-import multiprocessing
-import re
-from sklearn.cluster import DBSCAN, KMeans
-import matplotlib
-from mpl_toolkits import mplot3d
-import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
+sys.path.append("..")
+from NLP_Base import *
 
 file_prox = '../docs/'
-
-
-
 
 class G_Word2Vec(object):
     def __init__(self,model_path):
@@ -97,6 +84,9 @@ class G_Word2Vec(object):
             ax.text(vector[0], vector[1], vector[2], word, ha='center', va='center')
         plt.show()
     def julei_2D(self):
+        # model = KeyedVectors.load_word2vec_format('D:\study_data\graduate_content\Futures\sgns.baidubaike.bigram-char',
+        #                                          binary=False, unicode_errors='ignore')
+        # model = KeyedVectors.load_word2vec_format('D:\study_data\graduate_content\Futures\sgns.financial.bigram-char',binary=False, unicode_errors='ignore')
         model = Word2Vec.load(self.model_path+'.model')
         # words = sample(model.wv.index2word, 200)
         # vectors = [model[word] for word in words]
@@ -130,6 +120,7 @@ class G_Word2Vec(object):
             # markIndex = int(clusterAssment[i, 0])
             #plt.scatter(vectors[i][0], vectors[i][1], mark[clf.labels_[i]])
             plt.plot(vectors[i][0], vectors[i][1], mark[clf.labels_[i]])  # mark[markIndex])
+            plt.annotate(words[i], xy=(vectors[i, 0], vectors[i, 1]))
         mark = ['Dr', 'Db', 'Dg', 'Dk', '^b', '+b', 'sb', 'db', '<b', 'pb']
         # 画出质点，用特殊图型
         centroids = clf.cluster_centers_
@@ -142,8 +133,8 @@ class G_Word2Vec(object):
         # vectors = pca.fit_transform(vectors)
         # 可视化展示
         # plt.scatter(vectors[:, 0], vectors[:, 1],)
-        for i, word in enumerate(words):
-            plt.annotate(word, xy=(vectors[i, 0], vectors[i, 1]))
+        # for i, word in enumerate(words):
+        #     plt.annotate(word, xy=(vectors[i, 0], vectors[i, 1]))
         plt.show()
 
 
@@ -170,8 +161,8 @@ class G_Word2Vec(object):
         # self.jieba_cut()
         # self.train()
         # self.update_train()
-        self.julei_3D()
-        # self.predict()
+        # self.julei_2D()
+        self.predict()
 
 
 

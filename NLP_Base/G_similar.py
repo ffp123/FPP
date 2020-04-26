@@ -3,7 +3,7 @@
 @Time        : 2020/4/24 9:30 
 @Author      : tmooming
 @File        : G_similar.py 
-@Description : TODO
+@Description : 相似度计算
 """
 from random import sample
 

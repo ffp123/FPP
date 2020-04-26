@@ -2,24 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NLP_Base/G_similar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NLP_Base/jieba_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NLP_Base/models/yian_word2vec_100.model" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NLP_Base/models/yian_word2vec_100.vector" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/char_N_20190215.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/分词结果/yian_data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/症状词标准化结果.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubce.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP_Base/G_similar.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/G_similar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/models/word2vec_100.model" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/models/word2vec_100.model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/models/word2vec_100.vector" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/models/word2vec_100.vector" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP_Base/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP_Base/jieba_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/jieba_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/分词结果/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/分词结果/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/期货文档/农产品期货.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/农产品期货.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/期货文档/能源期货.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/能源期货.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/期货词频统计/期货词频统计.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货词频统计/期货词频统计.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/期货文档/scrapy_items.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/excel2text.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/excel2text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rw_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/rw_excel.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +155,8 @@
       <workItem from="1587606530400" duration="14827000" />
       <workItem from="1587691768408" duration="2969000" />
       <workItem from="1587697557040" duration="10566000" />
-      <workItem from="1587780902039" duration="9452000" />
+      <workItem from="1587780902039" duration="11045000" />
+      <workItem from="1587873124478" duration="11356000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
@@ -177,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587448096246</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="0425">
+      <created>1587791689432</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587791689432</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +215,8 @@
     <MESSAGE value="结构爬取1" />
     <MESSAGE value="完成远程连接" />
     <MESSAGE value="分词完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="分词完成" />
+    <MESSAGE value="0425" />
+    <option name="LAST_COMMIT_MESSAGE" value="0425" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FPP$baidubaike.coverage" NAME="baidubaike Coverage Results" MODIFIED="1586145716394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FPP/spiders" />

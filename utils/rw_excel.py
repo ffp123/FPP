@@ -5,7 +5,7 @@
 @File        : rw_excel.py 
 @Description : excel的读写操作
 """
-import pandas as pd
+from utils import *
 from openpyxl import load_workbook
 
 def get_sheet_name(excel_path):
