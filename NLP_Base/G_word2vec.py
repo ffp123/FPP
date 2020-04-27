@@ -12,11 +12,10 @@ from NLP_Base import *
 
 file_prox = '../docs/'
 
+
 class G_Word2Vec(object):
-    def __init__(self,model_path):
+    def __init__(self, model_path):
         self.model_path = model_path
-
-
 
     def train(self):
         # 可以用BrownCorpus,Text8Corpus或lineSentence来构建sentences，一般大语料使用这个
@@ -29,13 +28,13 @@ class G_Word2Vec(object):
         print(sentences)
 
         # 训练方式1
-        model = Word2Vec(sentences, size=100, min_count=1, window=5, sg=0, workers=multiprocessing.cpu_count(),hs=0)
-        model.save(self.model_path+'.model')
+        model = Word2Vec(sentences, size=100, min_count=1, window=5, sg=0, workers=multiprocessing.cpu_count(), hs=0)
+        model.save(self.model_path + '.model')
 
-        model.wv.save_word2vec_format(self.model_path+'.vector')
+        model.wv.save_word2vec_format(self.model_path + '.vector')
 
     def update_train(self):
-        model = Word2Vec.load(self.model_path+'.model')
+        model = Word2Vec.load(self.model_path + '.model')
         print(model)
         new_sentence = [
             '我喜欢吃苹果',
@@ -46,12 +45,12 @@ class G_Word2Vec(object):
         # 增量训练word2vec
         model.build_vocab(sentences, update=True)  # 注意update = True 这个参数很重要
         model.train(sentences, total_examples=model.corpus_count, epochs=10)
-        model.save(self.model_path+'.model')
-        model.wv.save_word2vec_format(self.model_path+'.vector')
+        model.save(self.model_path + '.model')
+        model.wv.save_word2vec_format(self.model_path + '.vector')
         print(model)
 
     def julei_3D(self):
-        model = Word2Vec.load(self.model_path+'.model')
+        model = Word2Vec.load(self.model_path + '.model')
         # words = sample(model.wv.index2word, 200)
         # vectors = [model[word] for word in words]
         df = pd.read_excel('../docs/期货词频统计/期货词频统计.xlsx', '期货相关词统计(按词性)')
@@ -77,30 +76,35 @@ class G_Word2Vec(object):
         matplotlib.rcParams['axes.unicode_minus'] = False  # 显示负号
         fig = plt.figure()
         ax = mplot3d.Axes3D(fig)  # 创建3d坐标轴
-        colors = ['red', 'blue', 'green','black']  # 分为三类
+        colors = ['red', 'blue', 'green', 'black']  # 分为三类
         # 绘制散点图 词语 词向量 类标(颜色)
         for word, vector, label in zip(words, vectors, labels):
             ax.scatter(vector[0], vector[1], vector[2], c=colors[label], s=30, alpha=0.3)
             ax.text(vector[0], vector[1], vector[2], word, ha='center', va='center')
         plt.show()
+
     def julei_2D(self):
         # model = KeyedVectors.load_word2vec_format('D:\study_data\graduate_content\Futures\sgns.baidubaike.bigram-char',
         #                                          binary=False, unicode_errors='ignore')
-        # model = KeyedVectors.load_word2vec_format('D:\study_data\graduate_content\Futures\sgns.financial.bigram-char',binary=False, unicode_errors='ignore')
-        model = Word2Vec.load(self.model_path+'.model')
+        # model = KeyedVectors.load_word2vec_format('D:\study_data\graduate_content\Futures\sgns.financial.bigram-char',
+        #                                         binary=False, unicode_errors='ignore')
+        model = Word2Vec.load(self.model_path + '.model')
         # words = sample(model.wv.index2word, 200)
         # vectors = [model[word] for word in words]
-        df = pd.read_excel('../docs/期货词频统计/期货词频统计.xlsx', '期货相关词统计(按词性)')
-        all_words = [word.split('|')[0] for lists in ['能源期货专有词', '农产品期货专有词', '金属期货专有词'] for word in
-                 df[lists].values.tolist() if word is not np.nan and 'n' in word]
-        words,not_word,vectors = [],[],[]
+        # df = pd.read_excel('../docs/期货词频统计/期货词频统计.xlsx', '期货相关词统计(按词性)')
+        # all_words = [word.split('|')[0] for lists in ['能源期货专有词', '农产品期货专有词', '金属期货专有词'] for word in
+        #              df[lists].values.tolist() if word is not np.nan and 'n' in word]
+        df = pd.read_excel('../docs/聚类汇总.xlsx', '三者交集')
+        all_words = [word for word in df['red']]
+
+        words, not_word, vectors = [], [], []
         for word in all_words:
             if word in model.wv.index2word:
                 words.append(word)
                 vectors.append(model[word])
             else:
                 not_word.append(word)
-        print(not_word)
+
         plt.rcParams['font.sans-serif'] = ['SimHei']  # 显示中文
         matplotlib.rcParams['axes.unicode_minus'] = False  # 显示负号
         tsne = TSNE(n_components=2)
@@ -108,17 +112,21 @@ class G_Word2Vec(object):
 
         clf = KMeans(n_clusters=3)  # 设定k  ！！！！！！！！！！这里就是调用KMeans算法
         clf.fit(vectors)  # 加载数据集合
-
-        numSamples = len(vectors)
         centroids = clf.labels_
+        result = {'red': [words[i] for i, v in enumerate(centroids) if v == 0],
+                  'blue': [words[i] for i, v in enumerate(centroids) if v == 1],
+                  'green': [words[i] for i, v in enumerate(centroids) if v == 2], 'others': not_word}
+        write_to_excel(pd.DataFrame(dict([(k, pd.Series(v)) for k, v in result.items()])), '../docs/聚类汇总.xlsx',
+                       '三者交集red期货再细分')
         print(centroids, type(centroids))  # 显示中心点
-        print(clf.inertia_)  # 显示聚类效果
+        print(clf.inertia_)  # 显示聚类效果 float型，每个点到其簇的质心的距离之和。
+        # or: red ob: blue og: green ok: black
         mark = ['or', 'ob', 'og', 'ok', '^r', '+r', 'sr', 'dr', '<r', 'pr']
         # 画出所有样例点 属于同一分类的绘制同样的颜色
 
-        for i in range(numSamples):
+        for i in range(len(vectors)):
             # markIndex = int(clusterAssment[i, 0])
-            #plt.scatter(vectors[i][0], vectors[i][1], mark[clf.labels_[i]])
+            # plt.scatter(vectors[i][0], vectors[i][1], mark[clf.labels_[i]])
             plt.plot(vectors[i][0], vectors[i][1], mark[clf.labels_[i]])  # mark[markIndex])
             plt.annotate(words[i], xy=(vectors[i, 0], vectors[i, 1]))
         mark = ['Dr', 'Db', 'Dg', 'Dk', '^b', '+b', 'sb', 'db', '<b', 'pb']
@@ -128,7 +136,6 @@ class G_Word2Vec(object):
             plt.plot(centroids[i][0], centroids[i][1], mark[i], markersize=12)
             # print centroids[i, 0], centroids[i, 1]
 
-
         # pca = PCA(n_components=2)
         # vectors = pca.fit_transform(vectors)
         # 可视化展示
@@ -137,11 +144,10 @@ class G_Word2Vec(object):
         #     plt.annotate(word, xy=(vectors[i, 0], vectors[i, 1]))
         plt.show()
 
-
     def predict(self):
         # model = KeyedVectors.load_word2vec_format('D:\study_data\graduate_content\Futures\sgns.baidubaike.bigram-char', binary=False, unicode_errors='ignore')
-        model = Word2Vec.load(self.model_path+'.model')
-        #vec = model['生物医药']
+        model = Word2Vec.load(self.model_path + '.model')
+        # vec = model['生物医药']
         # print(vec)
         result = model.wv.similarity('钢铁', '新能源')
 
@@ -155,15 +161,14 @@ class G_Word2Vec(object):
         res2 = model.wv.most_similar("钢铁", topn=10)  # 10个最相关的
         print(u"和 [钢铁] 最相关的词有：\n")
         for item in res2:
-           print(item[0], item[1])
+            print(item[0], item[1])
 
     def run(self):
         # self.jieba_cut()
         # self.train()
         # self.update_train()
-        # self.julei_2D()
-        self.predict()
-
+        self.julei_2D()
+        # self.predict()
 
 
 if __name__ == "__main__":
@@ -171,7 +176,7 @@ if __name__ == "__main__":
     #     '详细了解园区规划，走访入驻企业项目，现场察看产品研发和产业化情况。他强调，',
     #     '要坚持规划先行，立足高起点、高标准、高质量，科学规划园区组团，提升公共服务水平，',
     #     ]
-    model_path ='models/word2vec_100'
+    model_path = 'models/word2vec_100'
     # df = pd.read_excel('../docs/期货词频统计/期货词频统计.xlsx','期货相关词统计(按词性)')
     # words = [word.split('|')[0] for lists in ['能源期货专有词','农产品期货专有词','金属期货专有词'] for word in df[lists].values.tolist() if word is not np.nan and 'n' in word]
 

@@ -8,7 +8,7 @@
 import sys
 
 sys.path.append("..")
-from utils.rw_excel import read_from_excel
+from utils.rw_excel import read_from_excel,write_to_excel
 import pandas as pd
 import ast
 import json

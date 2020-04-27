@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FPP/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/nongyezhishi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/聚类汇总.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/dataframe_opt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubce.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/G_similar.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/G_similar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/jieba_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/jieba_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP_Base/models/yian_word2vec_100.model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP_Base/models/yian_word2vec_100.vector" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/期货文档/scrapy_items.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/症状词标准化结果.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/excel2text.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/excel2text.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/rw_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/rw_excel.py" afterDir="false" />
     </list>
@@ -156,7 +150,8 @@
       <workItem from="1587691768408" duration="2969000" />
       <workItem from="1587697557040" duration="10566000" />
       <workItem from="1587780902039" duration="11045000" />
-      <workItem from="1587873124478" duration="11356000" />
+      <workItem from="1587873124478" duration="11474000" />
+      <workItem from="1587954630012" duration="19376000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>

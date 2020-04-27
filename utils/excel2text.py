@@ -6,8 +6,8 @@
 @Description : 读取excel到text
 """
 import sys
-from utils import *
 sys.path.append("..")
+from utils import *
 from utils.rw_excel import read_from_excel
 
 def write2txt(df,txt_path):
@@ -27,4 +27,4 @@ if __name__ == "__main__":
     sheet_names = xl.sheet_names[1:]
     print(sheet_names)
     df = read_from_excel(excel_path, sheet_names)['语料原文']
-    write2txt(df,txt_path)
+    # write2txt(df,txt_path)

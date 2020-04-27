@@ -78,8 +78,6 @@ FPP
 │  └─models
 │          word2vec_100.model
 │          word2vec_100.vector
-│          yian_word2vec_100.model
-│          yian_word2vec_100.vector
 │          
 ├─utils
 │   │  excel2text.py
