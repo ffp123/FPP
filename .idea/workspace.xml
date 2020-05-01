@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/nongyezhishi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/聚类汇总.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/dataframe_opt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/baiduindex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tmoom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tmoom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/models/yian_word2vec_100.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/models/yian_word2vec_100.vector" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/症状词标准化结果.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/excel2text.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/excel2text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/rw_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/rw_excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +55,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/期货词频统计" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -152,6 +149,9 @@
       <workItem from="1587780902039" duration="11045000" />
       <workItem from="1587873124478" duration="11474000" />
       <workItem from="1587954630012" duration="19376000" />
+      <workItem from="1588065085192" duration="3020000" />
+      <workItem from="1588133236047" duration="19000" />
+      <workItem from="1588299111328" duration="23297000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>

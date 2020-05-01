@@ -4,6 +4,9 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+import datetime
+
+import pandas as pd
 import psycopg2
 import redis
 import pandas
@@ -101,3 +104,56 @@ class BaidubcePipline(object):
         else:
             print('测试')
         return item
+
+
+class BaiduIndexPipline(object):
+    def __init__(self):
+        self.connection = postgres_connect
+        self.cur = self.connection.cursor()
+        redis_db.flushdb()  # 清空当前数据库中的所有 key，为了后面将mysql数据库中的数据全部保存进去
+        # print(redis_db)
+        if redis_db.hlen(redis_data_dict) == 0:  # 判断redis数据库中的key，若不存在就读取mysql数据并临时保存在redis中
+            # sql = 'select context from zhparser.scrapy_items'  # 查询表中的现有数据
+            sql = 'select index_time,time_type,area,search_word from baidu_index'
+            df = pandas.read_sql(sql, self.connection)  # 读取mysql中的数据
+            df['index_time'] = df['index_time'].astype('str')
+            df['data'] = df['index_time'].str.cat([df['time_type'], df['area'], df['search_word']], sep='_')
+            for value in df['data']:
+                redis_db.hset(redis_data_dict, value, 0)
+
+    def close_spider(self, spider):
+        self.cur.close()
+        self.connection.close()
+
+    def process_item(self, item, spider):
+        df = pd.DataFrame(
+            columns=['index_time', 'time_type', 'area', 'search_word', 'all_data', 'pc_data', 'wise_data'])
+        for i in range(len(item['all_data'])):
+            start_date = datetime.datetime.strptime(item['start_date'], '%Y-%m-%d')
+            delta = datetime.timedelta(days=7)
+            now = start_date + delta * i
+            df.loc[i, :] = {'index_time': now, 'time_type': item['time_type'], 'area': item['area'],
+                            'search_word': item['search_word'], 'all_data': item['all_data'][i],
+                            'pc_data': item['pc_data'][i], 'wise_data': item['wise_data'][i]}
+            if redis_db.hexists(redis_data_dict, '_'.join([str(now.date()), item['time_type'], item['area'], item[
+                'search_word']])):  # 比较的是redis_data_dict里面的field
+
+                continue
+
+            else:
+                self.do_insert(df.loc[i, :])
+
+    def do_insert(self, line):
+        flag = True
+
+        if flag:
+            try:
+                self.cur.execute(
+                    "INSERT INTO baidu_index(index_time, time_type, area, search_word, all_data, pc_data, wise_data) VALUES(%s,%s,%s,%s,%s,%s,%s); ",
+                    (line[:]))
+            except Exception as e:
+                print("错误", e)
+
+            self.connection.commit()
+        # else:
+        #     print('测试')

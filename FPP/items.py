@@ -51,3 +51,22 @@ class BaidubceItem(Item):
     nz_word = Field()
     # 分词词频统计
     count_word = Field()
+
+
+class BaiduIndexItem(Item):
+    # 搜索词 如玉米
+    search_word = Field()
+    # 搜索范围 如：0代表全国
+    area = Field()
+    # 起始时间
+    start_date = Field()
+    # 终止时间
+    end_date = Field()
+    # 数值类型：周为单位或日为单位
+    time_type = Field()
+    # 总搜索指数：PC+移动端
+    all_data = Field()
+    # PC端搜索指数
+    pc_data = Field()
+    # 移动端搜索指数
+    wise_data = Field()

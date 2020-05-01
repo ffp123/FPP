@@ -23,3 +23,8 @@ f[2]: field_countries:420
 <http://www.china-cotton.org/>
 
 <http://data.mofcom.gov.cn/>
+
+命令：
+```python
+python -m scrapy genspider xx xx.com
+```

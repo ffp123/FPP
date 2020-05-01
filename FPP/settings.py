@@ -32,7 +32,7 @@ DOWNLOAD_DELAY = 1
 # CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-# COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
@@ -68,6 +68,7 @@ ITEM_PIPELINES = {
     'FPP.pipelines.FPPPipeline': 300,
     'FPP.pipelines.BaiduBaikePipeline': 400,
     'FPP.pipelines.BaidubcePipline': 401,
+    'FPP.pipelines.BaiduIndexPipline': 402,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
