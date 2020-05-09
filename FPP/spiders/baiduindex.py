@@ -10,6 +10,7 @@ import datetime
 import requests
 from FPP.items import BaiduIndexItem
 from FPP.settings import USER_AGENT
+from scrapy_splash import SplashRequest, SplashJsonResponse
 from FPP.spiders import *
 
 
@@ -22,29 +23,27 @@ class BaiduindexSpider(scrapy.Spider):
         'ITEM_PIPELINES': {'FPP.pipelines.BaiduIndexPipline': 402}
     }
     COOKIES = {
-        "CHKFORREG": "74223646f34140a158db712ecfdb4cee",
-        "BAIDUID": "7C4422DE481F571C7E041263530CC49A:FG=1",
-        "BIDUPSID": "7C4422DE481F571C7E041263530CC49A",
-        "PSTM": 1571639074,
-        "MCITY": "-315%3A",
-        "BDUSS": "1A5MktCSnRQeExmRjAzWE9vVU56QXlVd29McmVqcUFaa05pVUlGYzVDSFZyc1JlRVFBQUFBJCQAAAAAAAAAAAEAAAB1PMDJsKLLubbZxaPI4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANUhnV7VIZ1eb",
-        "ZD_ENTRY": "empty",
-        "H_PS_PSSID": "31351_1461_31169_21092_31253_31423_31341_31464_30823_26350_31164_31473",
-        "BDRCVFR[feWj1Vr5u3D]": "I67x6TjHwwYf0",
-        "delPer": 0,
-        "PSINO": 3,
-        "Hm_lvt_d101ea4d2a5c67dab98251f0b5de24dc": 1588299798,
-        "bdindexid": "32rk4ts1k7ibl1nor068lv17o0",
-        "Hm_lpvt_d101ea4d2a5c67dab98251f0b5de24dc": 1588300131,
-        "RT": "z=1&dm=baidu.com&si=9nnqsci8esv&ss=k9nkoukr&sl=6&tt=aja&bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf"
+        'BAIDUID': '7C4422DE481F571C7E041263530CC49A:FG=1',
+        'BIDUPSID': '7C4422DE481F571C7E041263530CC49A',
+        'PSTM': '1571639074',
+        'MCITY': '-315%3A',
+        'cflag': '13%3A3',
+        'bdindexid': 'sa0sdsq4jeviifm3sbb7n6hdc4',
+        'Hm_lvt_d101ea4d2a5c67dab98251f0b5de24dc': '1588299798,1588313145,1588989903',
+        'BDUSS': 'FEMGVNVVR2Z0ZvZUhOQTJpYWdqbX5xTWtvdn5GMWVvbjhtcmRoOTBkUVpvZDFlRVFBQUFBJCQAAAAAAAAAAAEAAAB1PMDJsKLLubbZxaPI4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkUtl4ZFLZefk',
+        'CHKFORREG': '74223646f34140a158db712ecfdb4cee',
+        'Hm_lpvt_d101ea4d2a5c67dab98251f0b5de24dc': '1588991008',
+        'H_PS_PSSID': '31351_1461_31169_21092_31253_31423_31464_30823_26350_31164',
+        'RT': "z=1&dm=baidu.com&si=mgmyibstg1&ss=k9yzk76b&sl=e&tt=z73&bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf&ld=ntfm&ul=2r0sk"
     }
+    cookie = 'BAIDUID=7C4422DE481F571C7E041263530CC49A:FG=1; BIDUPSID=7C4422DE481F571C7E041263530CC49A; PSTM=1571639074; MCITY=-315%3A; cflag=13%3A3; bdindexid=sa0sdsq4jeviifm3sbb7n6hdc4; Hm_lvt_d101ea4d2a5c67dab98251f0b5de24dc=1588299798,1588313145,1588989903; BDUSS=FEMGVNVVR2Z0ZvZUhOQTJpYWdqbX5xTWtvdn5GMWVvbjhtcmRoOTBkUVpvZDFlRVFBQUFBJCQAAAAAAAAAAAEAAAB1PMDJsKLLubbZxaPI4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkUtl4ZFLZefk; CHKFORREG=74223646f34140a158db712ecfdb4cee; Hm_lpvt_d101ea4d2a5c67dab98251f0b5de24dc=1588991008; H_PS_PSSID=31351_1461_31169_21092_31253_31423_31464_30823_26350_31164; RT="z=1&dm=baidu.com&si=mgmyibstg1&ss=k9yzk76b&sl=e&tt=z73&bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf&ld=ntfm&ul=2r0sk"'
     headers = {
         'Accept': 'application/json, text/plain, */*',
         'Accept-Encoding': 'gzip, deflate,br',
         'Accept-Language': 'zh-CN,zh;q=0.9',
         'Cache-Control': 'no-cache',
         'Connection': 'keep - alive',
-        'Cookie': 'BAIDUID=7C4422DE481F571C7E041263530CC49A:FG=1; BIDUPSID=7C4422DE481F571C7E041263530CC49A; PSTM=1571639074; MCITY=-315%3A; BDUSS=1A5MktCSnRQeExmRjAzWE9vVU56QXlVd29McmVqcUFaa05pVUlGYzVDSFZyc1JlRVFBQUFBJCQAAAAAAAAAAAEAAAB1PMDJsKLLubbZxaPI4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANUhnV7VIZ1eb; ZD_ENTRY=empty; H_PS_PSSID=31351_1461_31169_21092_31253_31423_31341_31464_30823_26350_31164_31473; BDRCVFR[feWj1Vr5u3D]=I67x6TjHwwYf0; delPer=0; PSINO=3; Hm_lvt_d101ea4d2a5c67dab98251f0b5de24dc=1588299798; bdindexid=32rk4ts1k7ibl1nor068lv17o0; Hm_lpvt_d101ea4d2a5c67dab98251f0b5de24dc=1588300131; RT="z=1&dm=baidu.com&si=9nnqsci8esv&ss=k9nkoukr&sl=6&tt=aja&bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf"',
+        'Cookie': 'BDUSS=FEMGVNVVR2Z0ZvZUhOQTJpYWdqbX5xTWtvdn5GMWVvbjhtcmRoOTBkUVpvZDFlRVFBQUFBJCQAAAAAAAAAAAEAAAB1PMDJsKLLubbZxaPI4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkUtl4ZFLZefk',
         'DNT': '1',
         'Host': 'index.baidu.com',
         'Pragma': 'no-cache',
@@ -55,18 +54,53 @@ class BaiduindexSpider(scrapy.Spider):
     }
 
     COUNTRY = {'全国': 0}
+    script = '''
+            function main(splash)
+              local url = splash.args.url
+              assert(splash:go(url))
+              assert(splash:wait(0.5))
+              local entries = splash:history()
+              local last_response = entries[#entries].response
+              return {
+                url = splash:url(),
+                headers = last_response.headers,
+                http_status = last_response.status,
+                cookies = splash:get_cookies(),
+                html = splash:html(),
+              }
+            end
+            '''
 
     def start_requests(self):
+        # yield SplashJsonResponse('https://index.baidu.com/v2/index.html#/',callback=self.get_cookie,headers=self.headers,args={'lua_source': self.script})
+        # yield scrapy.Request('https://index.baidu.com/v2/index.html#/', callback=self.get_cookie, headers=self.headers,)
+
         start_date = '2011-01-03'
         end_date = '2020-05-03'
         country = '全国'
         area = self.COUNTRY[country]
         for word in ['玉米']:
             url = f'http://index.baidu.com/api/SearchApi/index?word={word}&area={area}&startDate={start_date}&endDate={end_date}'
-            yield scrapy.FormRequest(url, method="GET", cookies=self.COOKIES, headers=self.headers,
-                                     meta={'area': country, 'start_date': start_date, 'end_date': end_date},
-                                     callback=self.parse)
+            yield scrapy.Request(url, method="GET", cookies=self.COOKIES, headers=self.headers,
+                                 meta={'area': country, 'start_date': start_date, 'end_date': end_date},
+                                 callback=self.parse)
 
+
+
+    # def stringToDict(self):
+    #     '''
+    #     将从浏览器上Copy来的cookie字符串转化为Scrapy能使用的Dict
+    #     :return:
+    #     '''
+    #     itemDict = {}
+    #     items = self.cookie.split(';')
+    #     print(items)
+    #     for item in items:
+    #         key = item.split('=',1)[0].replace(' ', '')
+    #         value = item.split('=',1)[1]
+    #         itemDict[key] = value
+    #     print(itemDict)
+    #     return itemDict
     def decrypt(self, keys, encrypt_data):
         w_data = {}
         for index in range(len(keys) // 2):
@@ -78,9 +112,10 @@ class BaiduindexSpider(scrapy.Spider):
         return decrypt_data
 
     def parse(self, response):
+        print(response)
         item = BaiduIndexItem()
         data = json.loads(response.text)['data']
-        generalRatio = data['generalRatio'][0]
+        # generalRatio = data['generalRatio'][0]
         uniqid = data['uniqid']
 
         userIndexes = data['userIndexes'][0]

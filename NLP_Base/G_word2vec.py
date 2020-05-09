@@ -6,7 +6,7 @@
 @Description : 使用gensim工具包进行词向量训练
 """
 import sys
-
+import time
 sys.path.append("..")
 from NLP_Base import *
 
@@ -50,7 +50,10 @@ class G_Word2Vec(object):
         print(model)
 
     def julei_3D(self):
-        model = Word2Vec.load(self.model_path + '.model')
+        start = time.time()
+        model = KeyedVectors.load_word2vec_format('D:\study_data\graduate_content\Futures\sgns.baidubaike.bigram-char',
+                                                                                   binary=False, unicode_errors='ignore')
+        # model = Word2Vec.load(self.model_path + '.model')
         # words = sample(model.wv.index2word, 200)
         # vectors = [model[word] for word in words]
         df = pd.read_excel('../docs/期货词频统计/期货词频统计.xlsx', '期货相关词统计(按词性)')
@@ -81,6 +84,8 @@ class G_Word2Vec(object):
         for word, vector, label in zip(words, vectors, labels):
             ax.scatter(vector[0], vector[1], vector[2], c=colors[label], s=30, alpha=0.3)
             ax.text(vector[0], vector[1], vector[2], word, ha='center', va='center')
+        end = time.time()
+        print(start-end)
         plt.show()
 
     def julei_2D(self):
@@ -167,7 +172,7 @@ class G_Word2Vec(object):
         # self.jieba_cut()
         # self.train()
         # self.update_train()
-        self.julei_2D()
+        self.julei_3D()
         # self.predict()
 
 

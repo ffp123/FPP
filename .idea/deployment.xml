@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="东京云" uploadOnCheckin="60a5fbf4-8b6b-4276-af62-60386baae897">
+  <component name="PublishConfigData" autoUpload="Always" serverName="东京云" uploadOnCheckin="60a5fbf4-8b6b-4276-af62-60386baae897">
     <serverData>
       <paths name="turw">
         <serverdata>
@@ -16,7 +16,15 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="宁夏云">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="东京云" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

@@ -28,3 +28,4 @@ f[2]: field_countries:420
 ```python
 python -m scrapy genspider xx xx.com
 ```
+百度指数源码：<https://github.com/longxiaofei/spider-BaiduIndex>

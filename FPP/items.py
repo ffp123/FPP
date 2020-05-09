@@ -55,18 +55,18 @@ class BaidubceItem(Item):
 
 class BaiduIndexItem(Item):
     # 搜索词 如玉米
-    search_word = Field()
+    keyword = Field()
     # 搜索范围 如：0代表全国
     area = Field()
-    # 起始时间
-    start_date = Field()
-    # 终止时间
-    end_date = Field()
+    # 时间
+    date = Field()
+    # 搜索类别：百度搜索指数、百度媒体指数、百度咨询指数
+    kind = Field()
     # 数值类型：周为单位或日为单位
     time_type = Field()
     # 总搜索指数：PC+移动端
-    all_data = Field()
+    all_index = Field()
     # PC端搜索指数
-    pc_data = Field()
+    pc_index = Field()
     # 移动端搜索指数
-    wise_data = Field()
+    wise_index = Field()

@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baiduindex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tmoom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tmoom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/baidu_index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/extended_baidu_index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/save_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FPP/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FPP/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FPP/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/pipelines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FPP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baiduindex.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baiduindex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/nongyezhishi.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/nongyezhishi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,19 +68,19 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\期货词频统计" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\spiders" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\NLP_Base" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\utils" />
       <recent name="D:\study_data\graduate_content\Futures\FPP" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\data\期货词频统计" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\期货词频统计" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -83,7 +95,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.demo">
     <configuration name="baidubaike" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FPP" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,8 +118,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FPP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FPP/spiders/spider-BaiduIndex" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\study_data\graduate_content\Futures\FPP\FPP\spiders\start_baidu_index.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.demo" />
         <item itemvalue="Python.baidubaike" />
         <item itemvalue="Python.baidubaike" />
       </list>
@@ -151,7 +186,14 @@
       <workItem from="1587954630012" duration="19376000" />
       <workItem from="1588065085192" duration="3020000" />
       <workItem from="1588133236047" duration="19000" />
-      <workItem from="1588299111328" duration="23297000" />
+      <workItem from="1588299111328" duration="23392000" />
+      <workItem from="1588497937091" duration="9034000" />
+      <workItem from="1588559948599" duration="10964000" />
+      <workItem from="1588732303735" duration="8598000" />
+      <workItem from="1588820548047" duration="4361000" />
+      <workItem from="1588854960860" duration="2595000" />
+      <workItem from="1588914309356" duration="10335000" />
+      <workItem from="1588988994769" duration="14695000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
@@ -204,6 +246,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/stopwords" />
+      <path value="$PROJECT_DIR$/BaiduIndexNew" />
+      <path value="$PROJECT_DIR$/spiders" />
     </ignored-roots>
     <MESSAGE value="测试合并" />
     <MESSAGE value="结构爬取" />
@@ -214,6 +258,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="0425" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FPP$demo.coverage" NAME="demo Coverage Results" MODIFIED="1588996742064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FPP/spiders/spider-BaiduIndex" />
     <SUITE FILE_PATH="coverage/FPP$baidubaike.coverage" NAME="baidubaike Coverage Results" MODIFIED="1586145716394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FPP/spiders" />
   </component>
 </project>

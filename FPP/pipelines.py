@@ -12,9 +12,15 @@ import redis
 import pandas
 from scrapy.exceptions import DropItem
 
-redis_db = redis.Redis(host='127.0.0.1', port=6379, db=1)  # 连接本地redis，db数据库默认连接到0号库，写的是索引值
+try:
+    redis_db = redis.Redis(host='127.0.0.1', port=12787, db=1)  # 连接本地redis，db数据库默认连接到0号库，写的是索引值
+    postgres_connect = psycopg2.connect(host="127.0.0.1", port='12786', user="postgres", password="postgres",
+                                        dbname="FPP")
+except:
+    redis_db = redis.Redis(host='127.0.0.1', port=6379, db=1)
+    postgres_connect = psycopg2.connect(host="127.0.0.1", port='5432', user="postgres", password="postgres",
+                                        dbname="FPP")
 redis_data_dict = 'item_context'  # key的名字，里面的内容随便写，这里的key相当于字典名称，而不是key值。为了后面引用而建的
-postgres_connect = psycopg2.connect(host="127.0.0.1", user="postgres", password="postgres", dbname="FPP")
 
 
 class FPPPipeline(object):
