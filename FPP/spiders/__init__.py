@@ -12,3 +12,4 @@ import collections
 import json
 from utils.rw_excel import read_from_excel
 from FPP.settings import USER_AGENT
+from tkinter import _flatten

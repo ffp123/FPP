@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FPP/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/baidu_index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/extended_baidu_index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/save_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/baidu_index/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/google_trends.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/待爬词汇/热词表.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FPP/spiders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baidubaike.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/baiduindex.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/baiduindex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/nongyezhishi.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/nongyezhishi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/G_word2vec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/start_baidu_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/start_baidu_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,20 +54,21 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/待爬词汇" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\期货词频统计" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\spiders" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\NLP_Base" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\utils" />
       <recent name="D:\study_data\graduate_content\Futures\FPP" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\待爬词汇" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\期货词频统计" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -194,6 +182,8 @@
       <workItem from="1588854960860" duration="2595000" />
       <workItem from="1588914309356" duration="10335000" />
       <workItem from="1588988994769" duration="14695000" />
+      <workItem from="1589013477527" duration="4226000" />
+      <workItem from="1589163092383" duration="13011000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
@@ -248,6 +238,8 @@
       <path value="$PROJECT_DIR$/stopwords" />
       <path value="$PROJECT_DIR$/BaiduIndexNew" />
       <path value="$PROJECT_DIR$/spiders" />
+      <path value="$PROJECT_DIR$/FPP/spiders/spider-BaiduIndex" />
+      <path value="$PROJECT_DIR$/docs/stopwords" />
     </ignored-roots>
     <MESSAGE value="测试合并" />
     <MESSAGE value="结构爬取" />

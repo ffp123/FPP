@@ -2,6 +2,7 @@ import sys
 import time
 
 import pandas as pd
+from _tkinter import _flatten
 
 sys.path.append("../..")
 from FPP.spiders.baidu_index.utils import test_cookies
@@ -15,25 +16,26 @@ if __name__ == "__main__":
     # 测试cookies是否配置正确
     # True为配置成功，False为配置不成功
     print(test_cookies(cookies))
-
-    keywords = ['玉米']
-
-    # 获取城市代码, 将代码传入area可以获取不同城市的指数, 不传则为全国
-    # 媒体指数不能分地区获取
-    # print(config.PROVINCE_CODE)
-    # print(config.CITY_CODE)
-    # 获取百度搜索指数(地区为全国)
-    baidu_index = BaiduIndex(
-        keywords=keywords,
-        start_date='2011-01-03',
-        end_date=time.strftime('%Y-%m-%d',time.localtime(time.time())),
-        cookies=cookies,
-        area=0
-    )
     baidu_save = BaiduIndexPipline()
-    for index in baidu_index.get_index():
-          baidu_save.process_item(index)
-          print(index)
+    keywords = list(_flatten([line.strip().split('，') for line in
+                           open('../../docs/待爬词汇/热词表.txt', encoding='gbk').readlines()]))
+    for keyword in keywords:
+        # 获取城市代码, 将代码传入area可以获取不同城市的指数, 不传则为全国
+        # 媒体指数不能分地区获取
+        # print(config.PROVINCE_CODE)
+        # print(config.CITY_CODE)
+        # 获取百度搜索指数(地区为全国)
+        time.sleep(3)
+        baidu_index = BaiduIndex(
+            keywords=[keyword],
+            start_date='2011-01-03',
+            end_date=time.strftime('%Y-%m-%d',time.localtime(time.time())),
+            cookies=cookies,
+            area=0
+        )
+        for index in baidu_index.get_index():
+              baidu_save.process_item(index)
+              print(index)
     baidu_save.close_spider()
 
 
