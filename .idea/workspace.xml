@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FPP/spiders/google_trends.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/待爬词汇/热词表.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/待爬词汇/hot words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/baidu_index/save_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/save_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/google_trends.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/google_trends.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FPP/spiders/start_baidu_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/start_baidu_index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,20 +51,20 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/待爬词汇" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\spiders" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\NLP_Base" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\utils" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs\待爬词汇" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs\期货词频统计" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\spiders" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\NLP_Base" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -183,7 +179,9 @@
       <workItem from="1588914309356" duration="10335000" />
       <workItem from="1588988994769" duration="14695000" />
       <workItem from="1589013477527" duration="4226000" />
-      <workItem from="1589163092383" duration="13011000" />
+      <workItem from="1589163092383" duration="13221000" />
+      <workItem from="1589248454739" duration="493000" />
+      <workItem from="1589269739002" duration="7196000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>

@@ -63,3 +63,41 @@ class BaiduIndexPipline(object):
             self.connection.commit()
         # else:
         #     print('测试')
+
+class GoogleTrends(object):
+    def __init__(self):
+        self.connection = postgres_connect
+        self.cur = self.connection.cursor()
+        redis_db.flushdb()  # 清空当前数据库中的所有 key，为了后面将mysql数据库中的数据全部保存进去
+        # print(redis_db)
+        if redis_db.hlen(redis_data_dict) == 0:  # 判断redis数据库中的key，若不存在就读取mysql数据并临时保存在redis中
+            # sql = 'select context from zhparser.scrapy_items'  # 查询表中的现有数据
+            sql = 'select date,keyword,cat,gprop,geo from google_trends'
+            df = pandas.read_sql(sql, self.connection)  # 读取mysql中的数据
+            df['date'] = df['date'].astype('str')
+            df['data'] = df['date'].str.cat([df['keyword'], df['cat'], df['gprop'],df['geo']], sep='_')
+            for value in df['data']:
+                redis_db.hset(redis_data_dict, value, 0)
+
+    def close_spider(self):
+        self.cur.close()
+        self.connection.close()
+
+    def process_item(self, item):
+        if redis_db.hexists(redis_data_dict, '_'.join(
+                [item['date'], item['keyword'], item['cat'], item['gprop'],item['geo']])):  # 比较的是redis_data_dict里面的field
+            print('已存在该数据')
+        else:
+            self.do_insert(item)
+
+    def do_insert(self, item):
+        flag = True
+        if flag:
+            try:
+                self.cur.execute(
+                    "INSERT INTO google_trends(date, keyword, cat, gprop,geo, google_index) VALUES(%s,%s,%s,%s,%s,%s); ",
+                    (item['date'],item['keyword'],item['cat'],item['gprop'],item['geo'],item[item['keyword']]))
+            except Exception as e:
+                print("错误", e)
+
+            self.connection.commit()

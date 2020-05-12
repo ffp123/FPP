@@ -1,15 +1,12 @@
 import sys
 import time
 
-import pandas as pd
 from _tkinter import _flatten
 
 sys.path.append("../..")
 from FPP.spiders.baidu_index.utils import test_cookies
-from FPP.spiders.baidu_index import config
-from FPP.spiders.baidu_index import BaiduIndex, ExtendedBaiduIndex
-from FPP.items import BaiduIndexItem
-from FPP.spiders.baidu_index.save_data import BaiduIndexPipline
+from FPP.spiders.baidu_index import BaiduIndex
+from FPP.save_data import BaiduIndexPipline
 cookies = 'BAIDUID=7C4422DE481F571C7E041263530CC49A:FG=1; BIDUPSID=7C4422DE481F571C7E041263530CC49A; PSTM=1571639074; MCITY=-315%3A; cflag=13%3A3; bdindexid=sa0sdsq4jeviifm3sbb7n6hdc4; Hm_lvt_d101ea4d2a5c67dab98251f0b5de24dc=1588299798,1588313145,1588989903; BDUSS=FEMGVNVVR2Z0ZvZUhOQTJpYWdqbX5xTWtvdn5GMWVvbjhtcmRoOTBkUVpvZDFlRVFBQUFBJCQAAAAAAAAAAAEAAAB1PMDJsKLLubbZxaPI4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkUtl4ZFLZefk; CHKFORREG=74223646f34140a158db712ecfdb4cee; Hm_lpvt_d101ea4d2a5c67dab98251f0b5de24dc=1588991008; H_PS_PSSID=31351_1461_31169_21092_31253_31423_31464_30823_26350_31164; RT="z=1&dm=baidu.com&si=mgmyibstg1&ss=k9yzk76b&sl=e&tt=z73&bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf&ld=ntfm&ul=2r0sk"'
 
 if __name__ == "__main__":
