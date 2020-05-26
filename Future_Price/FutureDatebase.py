@@ -7,7 +7,7 @@ import scipy.io as scio
 import pandas as pd
 import numpy as np
 
-datafile = 'futurePrice\FuturesDataCon.mat'
+datafile = 'model/FuturesDataCon.mat'
 data = scio.loadmat(datafile)
 #print(data['StockMat']['dtes'][0][0])
 date_0 = data['StockMat']['dtes'][0][0]

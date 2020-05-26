@@ -2,8 +2,9 @@
 该模块为整个程序的输入模块，输入起始日期，输入结束日期，输入期货品种
 
 '''
+import sys
 
-from datetime import date
+sys.path.append("..")
 from dateutil.parser import parse
 from FutureDatebase import dateBase
 import pandas as pd

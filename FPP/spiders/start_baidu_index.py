@@ -25,7 +25,7 @@ if __name__ == "__main__":
         time.sleep(3)
         baidu_index = BaiduIndex(
             keywords=[keyword],
-            start_date='2011-01-03',
+            start_date='2020-04-03',
             end_date=time.strftime('%Y-%m-%d',time.localtime(time.time())),
             cookies=cookies,
             area=0

@@ -6,6 +6,8 @@
 @Description : 谷歌趋势API
 """
 import sys
+import time
+
 sys.path.append("../..")
 import datetime
 
@@ -33,8 +35,8 @@ def time_slice(start_time, end_time):
 if __name__ == '__main__':
     # 间隔为半年
     mydelay = datetime.timedelta(weeks=28)
-    start_time = '2010-01-09'
-    end_time = '2020-05-12'
+    start_time = '2020-04-09'
+    end_time = time.strftime('%Y-%m-%d',time.localtime(time.time()))
     # 定义语言和时区
     pytrends = TrendReq(hl='en-US', tz=360)
     # kw_list：搜索词，cat：类别(默认为0，所有类别)，timeframe：时间范围，gprop：属性（默认为Google网页搜索），geo：地区（默认为全球）

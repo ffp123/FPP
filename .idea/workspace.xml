@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Future_Price/FutureDatebase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Future_Price/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Future_Price/get_date.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Future_Price/google_indexs.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Future_Price/model/FuturesDataCon.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Future_Price/readmat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/google_trends.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/google_trends.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPP/spiders/start_baidu_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/start_baidu_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/FutureDatebase.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/FutureDatebase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/get_date.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/get_date.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/google_indexs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/docs/google_trends/google_indexs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/readmat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/readmat.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\google_trends" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\Future_Price\model" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\Future_Price" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\FPP" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\spiders" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs\待爬词汇" />
@@ -188,7 +188,7 @@
       <workItem from="1589248454739" duration="493000" />
       <workItem from="1589269739002" duration="7196000" />
       <workItem from="1589954199885" duration="72000" />
-      <workItem from="1590471123949" duration="1095000" />
+      <workItem from="1590471123949" duration="3396000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
