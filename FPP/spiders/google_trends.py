@@ -35,7 +35,7 @@ def time_slice(start_time, end_time):
 if __name__ == '__main__':
     # 间隔为半年
     mydelay = datetime.timedelta(weeks=28)
-    start_time = '2020-04-09'
+    start_time = '2004-01-01'
     end_time = time.strftime('%Y-%m-%d',time.localtime(time.time()))
     # 定义语言和时区
     pytrends = TrendReq(hl='en-US', tz=360)
@@ -43,18 +43,17 @@ if __name__ == '__main__':
     keywords = list(_flatten([line.strip().split(',') for line in
                               open('../../docs/待爬词汇/hot words.txt', encoding='gbk').readlines()]))
     # keywords = ['corns']
-    google_trends = GoogleTrends()
     for keyword in keywords:
         df = None
         for timescale in time_slice(start_time, end_time):
-            pytrends.build_payload(kw_list=[keyword], cat=0, timeframe=timescale, gprop='', geo='US')
+            pytrends.build_payload(kw_list=[keyword], cat=0, timeframe=timescale, gprop='', geo='')
             _df = pytrends.interest_over_time()
             _df['date'] = _df.index
             _df['date'] = _df['date'].astype('str')
             _df['keyword'] = [keyword]*len(_df)
             _df['cat'] = ['0']*len(_df)
             _df['gprop'] = ['']*len(_df)
-            _df['geo'] = ['US']*len(_df)
+            _df['geo'] = ['ALL']*len(_df)
             # _df = _df.drop(['isPartial'],axis=1)
 
             df = pd.concat([df, _df], ignore_index=True)

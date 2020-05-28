@@ -4,6 +4,32 @@ sys.path.append("..")
 from Future_Price import *
 from get_date import startTime, endTime, future
 
+class ReadMat(object):
+    def __init__(self, file_path, array_name):
+        self.file_path = file_path
+        self.array_name = self.walk(array_name)
+        pass
+
+    def _get_array(self):
+        data = scio.loadmat(self.file_path)
+        for name in self.array_name:
+            k = [i for i in name]
+            s = "data['" + "']['".join(k) + "']"
+            print(eval(s).flatten()[0])
+
+    def walk(self, dicts):
+        for key, value in dicts.items():
+            if isinstance(value, dict):
+                for tup in self.walk(value):
+                    yield (key,) + tup
+            else:
+                if isinstance(value, list):
+                    for l in value:
+                        yield key, l
+
+
+
+
 '''
 可实验的时间区间:'2010-01-11':'2020-05-08'
 实验准备
@@ -23,7 +49,7 @@ date_0 = data['StockMat']['dtes'][0][0]
 '''
 读取关键字搜索量csv
 '''
-path = './docs/google_trends/google_indexs.csv'
+path = '../docs/google_trends/google_indexs.csv'
 # words = [] #word是一个二维list，代表所有关键字的搜索量
 googleData = pd.read_csv(path)
 # print(googleData.isna().sum()) #只有Libyan crisis 列有392个nan值，去掉这一列
@@ -33,6 +59,7 @@ googleData.drop(['Libyan crisis'], axis=1, inplace=True)
 googleData['date'] = pd.to_datetime(googleData['date'])
 
 '''
+
 处理收益率数据的日期格式
 '''
 # 当前date的格式为20200508,转换为标准日期格式
