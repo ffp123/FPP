@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Future_Price/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Future_Price/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPP/spiders/google_trends.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPP/spiders/google_trends.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Future_Price/readmat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/readmat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +188,9 @@
       <workItem from="1590491087404" duration="9021000" />
       <workItem from="1590543016061" duration="4945000" />
       <workItem from="1590631125144" duration="279000" />
-      <workItem from="1590631688341" duration="3839000" />
+      <workItem from="1590631688341" duration="4619000" />
+      <workItem from="1590738351271" duration="9112000" />
+      <workItem from="1590798368101" duration="2493000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
