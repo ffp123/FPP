@@ -23,6 +23,7 @@ def z_score(seq):  # 将序列标准化函数
 
     return seq1.tolist()
 
+
 def google_standard(googleData):
     '''
     对每个关键词的谷歌指数做log差，log(t+1) - log(t)
@@ -43,7 +44,8 @@ def google_standard(googleData):
         scoreList.append(z_score(word))
     return scoreList
 
-def Cfear(futureData,scoreList):
+
+def Cfear(futureData, scoreList, L):
     CFEARlist = []  # CFEARlist是一个一维list，包含了该期货品种下规定日期每一天的CFEAR因子。
     # 将选择的关键词按天写入dataframe
     wordslist = []
@@ -68,45 +70,45 @@ def Cfear(futureData,scoreList):
         wordslist.append(wordSelectList)
         # print(wordslist)
         CFEARlist.append(CFEAR)
-    return CFEARlist,wordslist
+    return CFEARlist, wordslist
 
-def result(futures,futuresData,scoreList):
+
+def result(futures, futuresData, futuresPriceData, scoreList, L=20):
     for future in futures:
         futureData = futuresData[future]
-        CFEARlist, wordslist =Cfear(futureData,scoreList)
-        yield CFEARlist, wordslist
-
+        CFEARlist, wordslist = Cfear(futureData, scoreList, L)
+        yield CFEARlist, wordslist, futuresPriceData[future][L:]
 
 
 if __name__ == "__main__":
+    # -----------参数---------------#
     L = 30  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
     CFEARLength = 3  # 想要计算CFEAR的长度,就是想要算多少天每天的CFEAR因子值，如果以天为单位就是CFEARLength个天的CFEAR因子值。后面使用 时间长度-时间窗口 来代替它
-
     mat_path = "model/FuturesDataCon.mat"
     array_name = {'StockMat': ['dtes', 'rets', "settle"]}
     google_path = '../docs/google_trends/google_indexs.csv'
     start_time = '2011-01-01'
     end_time = '2011-05-01'
-    futures = ['CU']
+    futures = ['CU', 'AL']
+
     data = Data(mat_path, google_path, array_name)
     mat_data, google_data = data.mat_data, data.google_data
     futuresData = mat_data['StockMat-rets'].loc[start_time:end_time]
     googleData = google_data.loc[start_time:end_time]
     futuresPriceData = mat_data['StockMat-settle'].loc[start_time:end_time]
     scoreList = google_standard(googleData)
-    r = futuresData['CU']  # r为收益率
-    futurePriceData = futuresPriceData['CU']
-    for cfear,words in result(futures,futuresData,scoreList):
-        print(cfear,words)
-        pricePlot = futurePriceData[L:]  # 作图用的收益率，时间上和搜索量数据对齐
-        X = range(len(cfear))
-        plt.figure()
-        plt.subplot(2, 1, 1)
-        plt.bar(X, cfear, label='CFEAR')
-        plt.subplot(2, 1, 2)
-        plt.plot(X, pricePlot, c='r', label='priceValue')
-        plt.legend()
-        plt.show()
+    # ----------输出-------------#
+    for cfear, words, price in result(futures, futuresData, futuresPriceData, scoreList, 20):
+        print(len(cfear), len(words), len(price))
+
+        # X = range(len(cfear))
+        # plt.figure()
+        # plt.subplot(2, 1, 1)
+        # plt.bar(X, cfear, label='CFEAR')
+        # plt.subplot(2, 1, 2)
+        # plt.plot(X, price, c='r', label='priceValue')
+        # plt.legend()
+        # plt.show()
 
 # '''
 # 读取关键词的谷歌搜索数据

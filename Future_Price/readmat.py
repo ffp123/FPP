@@ -37,14 +37,14 @@ class ReadMat(object):
 
 class Data(object):
     def __init__(self, mat_path, google_path, array_name):
-        self.mat_data = self._get_mat_data(mat_path,array_name)
+        self.mat_data = self._get_mat_data(mat_path, array_name)
         self.google_data = self._get_google_data(google_path)
 
-    def _get_mat_data(self,mat_path,array_name):
+    def _get_mat_data(self, mat_path, array_name):
         mat_data = ReadMat(mat_path=mat_path, array_name=array_name).data
         date = pd.DataFrame(mat_data['StockMat-dtes'].flatten(), columns=['date'])
         date['date'] = date['date'].astype('str')
-        mat_data['date'] = pd.to_datetime(date['date'],format="%Y-%m-%d")
+        mat_data['date'] = pd.to_datetime(date['date'], format="%Y-%m-%d")
         mat_data.pop('StockMat-dtes')
         mat_data['date'] = pd.DataFrame(mat_data['date'], columns=['date'])
         mat_data['StockMat-rets'] = pd.DataFrame(mat_data['StockMat-rets'], columns=FUTURES)
@@ -53,19 +53,15 @@ class Data(object):
         mat_data['StockMat-settle']['date'] = mat_data['date']['date']
         mat_data['StockMat-rets'] = mat_data['StockMat-rets'].set_index('date')
         mat_data['StockMat-settle'] = mat_data['StockMat-settle'].set_index('date')
-
         return mat_data
-    def _get_google_data(self,google_path):
+
+    def _get_google_data(self, google_path):
         googleData = pd.read_csv(google_path)
         googleData.drop(['Libyan crisis'], axis=1, inplace=True)
         googleData['date'] = pd.to_datetime(googleData['date'])
-        googleData = pd.merge(googleData,  self.mat_data['date'] , on='date')
+        googleData = pd.merge(googleData, self.mat_data['date'], on='date')
         googleData = googleData.set_index('date')
         return googleData
-
-
-
-
 
 # '''
 # 可实验的时间区间:'2010-01-11':'2020-05-08'
