@@ -82,7 +82,7 @@ def result(futures, futuresData, futuresPriceData, scoreList, L=20):
 
 if __name__ == "__main__":
     # -----------参数---------------#
-    L = 30  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
+    L = 20  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
     CFEARLength = 3  # 想要计算CFEAR的长度,就是想要算多少天每天的CFEAR因子值，如果以天为单位就是CFEARLength个天的CFEAR因子值。后面使用 时间长度-时间窗口 来代替它
     mat_path = "model/FuturesDataCon.mat"
     array_name = {'StockMat': ['dtes', 'rets', "settle"]}
