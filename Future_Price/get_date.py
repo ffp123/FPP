@@ -42,8 +42,13 @@ def get_future():
 		future = input('please re-input existing future[Capital letters]: ')
 	return future
 
-startTime, endTime = get_date()
-future = get_future()
+#startTime, endTime = get_date()
+#future = get_future()
+
+startTime = '2010-01-15'
+endTime = '2020-05-08'
+#future = 'CU'
+
 # print(startTime)
 # print(endTime)
 #print(future)

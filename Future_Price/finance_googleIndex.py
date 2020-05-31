@@ -22,6 +22,34 @@ def z_score(seq):  # 将序列标准化函数
 
     return seq1.tolist()
 
+#将线性回归和显著性检验封装，传入 期货名称、
+def OLS_tvalue(futureName):
+    r = futureData[futureName]
+    CFEARlist = []  # CFEARlist是一个一维list，包含了该期货品种下规定日期每一天的CFEAR因子。
+    wordslist = [] #选择出的关键词
+    for i in range(len(r) - L):  # 这里的CFEARLength为: 输入的时间长度-回溯长度
+        # 对于每一个关键词
+        CFEAR = 0
+        # 关键词索引
+        wordIndex = 0
+        # 选择的关键词list
+        wordSelectList = []
+        for word in scoreList:
+            # print(len(word[i:i+L]))
+            est = sm.OLS(r[i:i + L], word[i:i + L]).fit()  # 需要保证关键词数据的起始时间点和return的起始时间点要相同
+            # 后面接判断语句，t值或p值大于或小于阈值，则把参数选择出来，准备求和
+            if abs(est.tvalues[0]) > 1.96:
+                CFEAR += est.params[0]
+                wordSelectList.append(wordsname[wordIndex])
+            wordIndex += 1
+            # print(wordSelectList)
+            # print(wordIndex)
+        wordslist.append(wordSelectList)
+        # print(wordslist)
+        CFEARlist.append(CFEAR)
+    #计算出的数据写入字典
+    dictData = dict(name=futureName, CFEARdata=CFEARlist, wordSelected=wordslist, returnValue=r[L:].values)
+    return dictData
 
 wordsname = ['2008 financial crisis', 'blizzard', 'China unemployment rate', 'climate change',
              'cold', 'cold wave', 'cyclone', 'damp', 'drought', 'dry', 'Ebola', 'Ebola outbreak',
@@ -31,6 +59,12 @@ wordsname = ['2008 financial crisis', 'blizzard', 'China unemployment rate', 'cl
              'oil crisis', 'oil stocks', 'pest', 'pests and diseases', 'rain', 'rainfall', 'snow', 'storm',
              'strong wind', 'Syria war', 'terrorism', 'terrorist attack', 'tornado', 'typhoon',
              'unemployment', 'Unemployment benefits', 'unemployment rate']
+
+futNames = ['AL','CU','RU','A','WT','M','WS','CF','FU','C',
+                                 'B','SR','Y','TA','ZN','RO','L','P','AU','RB','WR','ER','V','IF','PB','J','ME','PM','AG','OI',
+                                 'RI','WH','FG','RM','RS','JM','TF','TC','BU','I','JD','JR','BB','FB','PP','HC','MA','LR','SF',
+                                 'SM','CS','T','NI','SN','IC','IH','ZC','CY','AP','SC','TS','SP','EG','CJ','UR','NR','RR',
+                                 'SS','EB','SA','PG']
 
 '''
 读取关键词的谷歌搜索数据
@@ -43,7 +77,7 @@ wordsname = ['2008 financial crisis', 'blizzard', 'China unemployment rate', 'cl
 '''
 # print(CU)
 # 收益率数据的处理，1先做时间切片，2再做品种选择
-r = futureData  # r为收益率
+#r = futureData  # r为收益率
 '''
 对每个关键词的谷歌指数做log差，log(t+1) - log(t)
 '''
@@ -66,54 +100,37 @@ for word in Sinterest:
 # scoreList为一个二维list，包含了每个关键词的在整个实验时间区间内的标准化后数据。
 
 # 长度得考虑节假日的影响，期货数据在节假日也是没有的
-# 2010-01-11 2020-05-11
+# 2010-01-15 2020-05-11
 # 前溯：20-240（步长20）
 # 时间平滑：前溯7天取均值作为当天index数据，节假日跳过（不主动做均值操作，只被动参与均值操作）
 # 变量、结果入库
-L = 30  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
-CFEARLength = 3  # 想要计算CFEAR的长度,就是想要算多少天每天的CFEAR因子值，如果以天为单位就是CFEARLength个天的CFEAR因子值。后面使用 时间长度-时间窗口 来代替它
+L = 20  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
+#CFEARLength = len(r) - L  # 想要计算CFEAR的长度,就是想要算多少天每天的CFEAR因子值，如果以天为单位就是CFEARLength个天的CFEAR因子值。后面使用 时间长度-时间窗口 来代替它
 '''
 线性回归分析t检验，检验关键词对return的影响是否显著
 '''
 # 这里要注意控制关键词的时间起始点和return收益率的时间起始点需要相同。
-# 对于每一个时间窗口
-CFEARlist = []  # CFEARlist是一个一维list，包含了该期货品种下规定日期每一天的CFEAR因子。
+# 对于每一个期货产品
+CFEARdata = dict()
+for Fname in futNames:
+    Compute_data = OLS_tvalue(Fname)
+    price = futurePriceData[Fname].values
+    Compute_data['price'] = price[L:]
+    CFEARdata[Fname] = Compute_data
+    print(CFEARdata)
 
-# 将选择的关键词按天写入dataframe
-wordslist = []
-for i in range(len(r) - L):  # 这里的CFEARLength为: 输入的时间长度-回溯长度
-    # 对于每一个关键词
-    CFEAR = 0
-    # 关键词索引
-    wordIndex = 0
-    # 选择的关键词list
-    wordSelectList = []
+print(CFEARdata)
 
-    for word in scoreList:
-        # print(len(word[i:i+L]))
-        est = sm.OLS(r[i:i + L], word[i:i + L]).fit()  # 需要保证关键词数据的起始时间点和return的起始时间点要相同
-        # 后面接判断语句，t值或p值大于或小于阈值，则把参数选择出来，准备求和
-        if abs(est.tvalues[0]) > 1.96:
-            CFEAR += est.params[0]
-            wordSelectList.append(wordsname[wordIndex])
-        wordIndex += 1
-        # print(wordSelectList)
-        # print(wordIndex)
-    wordslist.append(wordSelectList)
-    # print(wordslist)
-    CFEARlist.append(CFEAR)
-print(CFEARlist)
-
-pricePlot = futurePriceData[L:]  # 作图用的收益率，时间上和搜索量数据对齐
-# print(len(CFEARlist))
-# print(len(returnPlot))
-print(wordslist)
-
-X = range(len(CFEARlist))
-plt.figure()
-plt.subplot(2, 1, 1)
-plt.bar(X, CFEARlist, label='CFEAR')
-plt.subplot(2, 1, 2)
-plt.plot(X, pricePlot, c='r', label='priceValue')
-plt.legend()
-plt.show()
+# pricePlot = futurePriceData[L:]  # 作图用的收益率，时间上和搜索量数据对齐
+# # print(len(CFEARlist))
+# # print(len(returnPlot))
+# print(wordslist)
+#
+# X = range(len(CFEARlist))
+# plt.figure()
+# plt.subplot(2, 1, 1)
+# plt.bar(X, CFEARlist, label='CFEAR')
+# plt.subplot(2, 1, 2)
+# plt.plot(X, pricePlot, c='r', label='priceValue')
+# plt.legend()
+# plt.show()

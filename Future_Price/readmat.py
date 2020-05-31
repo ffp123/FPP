@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("..")
 from Future_Price import *
-from get_date import startTime, endTime, future
+from get_date import startTime, endTime
 
 class ReadMat(object):
     def __init__(self, file_path, array_name):
@@ -26,15 +26,22 @@ class ReadMat(object):
                 if isinstance(value, list):
                     for l in value:
                         yield key, l
+'''
+'''
 
-
+def moving_mean(names, dta):
+    googleData_2 = pd.DataFrame()
+    for name in names:
+        out = dta[name].rolling(7).mean()
+        googleData_2[name] = out
+    return googleData_2
 
 
 '''
-可实验的时间区间:'2010-01-11':'2020-05-08'
+可实验的时间区间:'2010-01-15':'2020-05-08'
 实验准备
 '''
-Future = future
+#Future = future
 beginTime = startTime
 endTime = endTime
 
@@ -59,7 +66,23 @@ googleData.drop(['Libyan crisis'], axis=1, inplace=True)
 googleData['date'] = pd.to_datetime(googleData['date'])
 
 '''
+数据平滑,将搜索量数据做7日平均
+'''
+wordnames = ['2008 financial crisis', 'blizzard', 'China unemployment rate', 'climate change',
+             'cold', 'cold wave', 'cyclone', 'damp', 'drought', 'dry', 'Ebola', 'Ebola outbreak',
+             'Ebola virus', 'economic crisis', 'economic recession', 'financial crisis', 'Flood', 'forest fire',
+             'frost', 'global warming', 'gust', 'hail', 'heat wave', 'heavy rain', 'high temperature',
+             'Middle East war', 'mountain fire', 'natural disasters',
+             'oil crisis', 'oil stocks', 'pest', 'pests and diseases', 'rain', 'rainfall', 'snow', 'storm',
+             'strong wind', 'Syria war', 'terrorism', 'terrorist attack', 'tornado', 'typhoon',
+             'unemployment', 'Unemployment benefits', 'unemployment rate']
+googleData_7_moved = moving_mean(names=wordnames, dta=googleData)
 
+
+googleData_7_moved['date'] = pd.to_datetime(googleData['date'])
+googleData_7_moved = googleData_7_moved.set_index('date')
+#print(googleData_7_moved.head(10))
+'''
 处理收益率数据的日期格式
 '''
 # 当前date的格式为20200508,转换为标准日期格式
@@ -74,8 +97,8 @@ for word in date_0:
 FutureDate = pd.DataFrame(date, columns=['date'])
 FutureDate['date'] = pd.to_datetime(FutureDate['date'])
 # 期货日期列为单独的列，google搜索列为所有数据的列，直接对二者做merge
-googleData_1 = pd.merge(googleData, FutureDate, on='date')
-# print(googleData_1)
+googleData_1 = pd.merge(googleData_7_moved, FutureDate, on='date')
+#print(googleData_1.head(10))
 
 '''
 处理期货收益率数据,没有用到现货价格
@@ -107,7 +130,7 @@ priceData = pd.DataFrame(price, columns=['AL', 'CU', 'RU', 'A', 'WT', 'M', 'WS',
 '''
 googleData_1 = googleData_1.set_index('date')
 googleData_1 = googleData_1.loc[beginTime:endTime]
-
+#print(googleData_1.head(10))
 '''
 处理期货数据.
 '''
@@ -122,9 +145,9 @@ priceData['date'] = FutureDate
 retsData = retsData.set_index('date')
 priceData = priceData.set_index('date')
 # 选取期货品种
-futures = retsData[Future]
-futuresprice = priceData[Future]
+# futures = retsData[Future]
+# futuresprice = priceData[Future]
 # 选取时间区间
-futureData = futures.loc[beginTime:endTime]
-futurePriceData = futuresprice.loc[beginTime:endTime]
-# print(futureData)
+futureData = retsData.loc[beginTime:endTime]
+futurePriceData = priceData.loc[beginTime:endTime]
+#print(futureData)
