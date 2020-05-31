@@ -1,6 +1,6 @@
 import sys
 
-from Future_Price.config import FUTURES
+from Future_Price.config import FUTURES, WORDS
 
 sys.path.append("..")
 from Future_Price import *
@@ -58,10 +58,19 @@ class Data(object):
     def _get_google_data(self, google_path):
         googleData = pd.read_csv(google_path)
         googleData.drop(['Libyan crisis'], axis=1, inplace=True)
-        googleData['date'] = pd.to_datetime(googleData['date'])
-        googleData = pd.merge(googleData, self.mat_data['date'], on='date')
+        googleData_1 = self.moving_mean(WORDS, googleData)
+        googleData_1['date'] = pd.to_datetime(googleData['date'])
+        googleData = pd.merge(googleData_1, self.mat_data['date'], on='date')
         googleData = googleData.set_index('date')
+        print(googleData)
         return googleData
+
+    def moving_mean(self, wordnames, data):
+        googleData_2 = pd.DataFrame()
+        for name in wordnames:
+            out = data[name].rolling(7).mean()
+            googleData_2[name] = out
+        return googleData_2
 
 # '''
 # 可实验的时间区间:'2010-01-11':'2020-05-08'
