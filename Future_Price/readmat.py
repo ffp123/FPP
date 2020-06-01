@@ -1,12 +1,9 @@
 import sys
 
-from Future_Price.config import FUTURES, WORDS
-
 sys.path.append("..")
 from Future_Price import *
+from Future_Price.config import FUTURES, WORDS
 
-
-# from get_date import startTime, endTime, future
 
 class ReadMat(object):
     def __init__(self, mat_path, array_name):
@@ -62,7 +59,6 @@ class Data(object):
         googleData_1['date'] = pd.to_datetime(googleData['date'])
         googleData = pd.merge(googleData_1, self.mat_data['date'], on='date')
         googleData = googleData.set_index('date')
-        print(googleData)
         return googleData
 
     def moving_mean(self, wordnames, data):

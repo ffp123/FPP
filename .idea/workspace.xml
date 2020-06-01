@@ -2,11 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/NLP_Base/analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/phrasemine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/similarity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/bert_embedding.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/图谱相关/Concept_1.0.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/图谱相关/entity_20200427.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/图谱相关/relation_20200427.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/农产品期货.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/农产品期货.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/能源期货.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/能源期货.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/金属期货.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/金属期货.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/农产品期货.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/相似度计算结果.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/能源期货.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/词频统计.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/金属期货.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货词频统计/统计结果20200427.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/热词.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/entity_relation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/graph_update.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/fun_tongji.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/graph_tool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/sim_tool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Future_Price/FutureDatebase.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Future_Price/get_date.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Future_Price/readmat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/readmat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP_Base/NER.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/NER.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,6 +215,7 @@
       <workItem from="1590798368101" duration="2493000" />
       <workItem from="1590812534140" duration="302000" />
       <workItem from="1590824142713" duration="1360000" />
+      <workItem from="1590999350339" duration="457000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
