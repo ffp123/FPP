@@ -94,7 +94,7 @@ class Finance(object):
 
 
 if __name__ == "__main__":
-    mat_path = "model/FuturesDataCon.mat"
+    mat_path = "../docs/期货文档/FuturesDataCon.mat"
     array_name = {'StockMat': ['dtes', 'rets', "settle"]}
     google_path = '../docs/google_trends/google_indexs.csv'
     # 获取谷歌全球数据，上面的谷歌美国数据最好也换成下面这种方式获取，如果更改，在Data的_get_google_data方法里改

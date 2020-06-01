@@ -2,33 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NLP_Base/analysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NLP_Base/phrasemine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NLP_Base/similarity.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/bert_embedding.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/图谱相关/Concept_1.0.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/图谱相关/entity_20200427.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/图谱相关/relation_20200427.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/农产品期货.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/农产品期货.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/能源期货.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/能源期货.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/金属期货.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/交易手册/金属期货.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/农产品期货.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/相似度计算结果.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/能源期货.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/词频统计.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货文档/研报ocr/金属期货.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/期货词频统计/统计结果20200427.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/热词.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph/entity_relation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph/graph_update.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/fun_tongji.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/graph_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/sim_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/model/FuturesDataCon.mat" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/FuturesDataCon.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/NER.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/NER.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/char_N_20190215.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/热词.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/待爬词汇/热词.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/sim_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sim_tool.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +40,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="moom" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,17 +64,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\google_trends" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\Future_Price\model" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\Future_Price" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP" />
-      <recent name="D:\study_data\graduate_content\Futures\FPP\FPP\spiders" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs\待爬词汇" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs\期货词频统计" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\期货文档" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\待爬词汇" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\docs\google_trends" />
+      <recent name="D:\study_data\graduate_content\Futures\FPP\Future_Price\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -150,6 +138,8 @@
       <list>
         <item itemvalue="Python.demo" />
         <item itemvalue="Python.baidubaike" />
+        <item itemvalue="Python.baidubaike" />
+        <item itemvalue="Python.demo" />
         <item itemvalue="Python.baidubaike" />
       </list>
     </recent_temporary>
@@ -216,6 +206,9 @@
       <workItem from="1590812534140" duration="302000" />
       <workItem from="1590824142713" duration="1360000" />
       <workItem from="1590999350339" duration="457000" />
+      <workItem from="1591000060038" duration="245000" />
+      <workItem from="1591000406995" duration="868000" />
+      <workItem from="1591005835038" duration="2014000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>

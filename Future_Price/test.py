@@ -5,11 +5,10 @@
 @File        : test.py 
 @Description : TODO
 """
-import datetime
 import sys
-from io import StringIO
 
 sys.path.append("..")
+from io import StringIO
 from Future_Price import *
 from Future_Price.readmat import *
 from Future_Price.config import FUTURES, WORDS
@@ -107,7 +106,7 @@ if __name__ == "__main__":
     data = Data(mat_path, google_path, array_name)
 
     variable = {'futures': futures, 'influence_factors': WORDS, 'google_data_sources': 'US', 'time_window': time_window,
-                 'f_value': f_value, 'time_interval': time_interval}
+                'f_value': f_value, 'time_interval': time_interval}
     finance = Finance(data=data, time_window=time_window, f_value=f_value,
                       time_interval=time_interval, futures=futures)
     # fp_save = FP_Save(variable,finance.result())
@@ -122,5 +121,5 @@ if __name__ == "__main__":
         print(detail.info())
         detail.to_csv(output, sep='\t', index=False, header=False)
         output1 = output.getvalue()
-        output1=output1.replace('[','{').replace(']','}')
+        output1 = output1.replace('[', '{').replace(']', '}')
         print(output1)

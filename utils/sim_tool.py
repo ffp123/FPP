@@ -1,8 +1,9 @@
+import sys
+
+sys.path.append("..")
 import Levenshtein
-import numpy as np
-import os
-import openpyxl
-import fun_tongji
+from utils import *
+from utils.fun_tongji import get_alpha_str
 
 class similarity(object):
 
@@ -97,7 +98,7 @@ class wordmine(object):
                 if i != 0:
                     for j in range(i - 1, -1, -1):
                         front = allvocabflag[k][j]
-                        fs = fun_tongji.get_alpha_str(front)
+                        fs = get_alpha_str(front)
                         frontword = front.replace(fs, '')
                         if fs in ['a', 'ag', 'an', 'ad', 'al', 'g', 'h', 'j', 'k', 'l', 'n', 'ns', 'nr', 'nt', 'nz',
                                   'nrt', 's', 'vn', 'vg'] or frontword in ['和', '与', '及', '以及', '及其', '并且']:
@@ -109,7 +110,7 @@ class wordmine(object):
                 if i != len(allvocabflag[k]) - 1:
                     for j in range(i + 1, len(allvocabflag[k]) - 1):
                         behind = allvocabflag[k][j]
-                        bs = fun_tongji.get_alpha_str(behind)
+                        bs = get_alpha_str(behind)
                         behindword = behind.replace(bs, '')
                         if bs in ['ag', 'an', 'ad', 'al', 'g', 'h', 'j', 'k', 'l', 'n', 'ns', 'nr', 'nt', 'nz', 'nrt',
                                   's', 'vn', 'vg'] \
