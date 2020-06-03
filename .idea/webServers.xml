@@ -3,19 +3,17 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="60a5fbf4-8b6b-4276-af62-60386baae897" name="东京云" url="http://52.194.194.99">
-        <fileTransfer host="52.194.194.99" port="22" privateKey="C:\Users\tmoom\.ssh\aws-tokyo-2020may.pem" rootFolder="/home/ubuntu/Python/FPP" accessType="SFTP" keyPair="true">
+        <fileTransfer rootFolder="/home/ubuntu/Python/FPP" accessType="SFTP" sshConfigId="f791fd03-a861-48b9-bd41-3b90b07d51be" sshConfig="东京云">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
       <webServer id="8601b538-fcd2-4d39-97ca-e7e8e6e701c0" name="宁夏云" url="http://161.189.108.74">
-        <fileTransfer host="161.189.108.74" port="22" privateKey="C:\Users\tmoom\.ssh\aws-ningxia-2020May.pem" rootFolder="/home/ubuntu/Python/FPP" accessType="SFTP" keyPair="true">
+        <fileTransfer rootFolder="/home/ubuntu/Python/FPP" accessType="SFTP" sshConfigId="64b808b3-d283-49a8-aef9-406a4f9669ec" sshConfig="宁夏云">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

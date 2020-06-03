@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 该模块作用：
 程序入口模块，展示时直接运行这个模块
@@ -77,7 +78,7 @@ def result(futures, futuresData, futuresPriceData, scoreList, L=20):
     for future in futures:
         futureData = futuresData[future]
         CFEARlist, wordslist = Cfear(futureData, scoreList, L)
-        yield CFEARlist, wordslist, futuresPriceData[future][L:]
+        yield CFEARlist, wordslist, futuresPriceData[future][L:],future,futuresData[future][L:]
 
 
 if __name__ == "__main__":
@@ -87,9 +88,9 @@ if __name__ == "__main__":
     mat_path = "model/FuturesDataCon.mat"
     array_name = {'StockMat': ['dtes', 'rets', "settle"]}
     google_path = '../docs/google_trends/google_indexs.csv'
-    start_time = '2011-01-01'
-    end_time = '2011-05-01'
-    futures = ['CU', 'AL']
+    start_time = '2010-01-15'
+    end_time = '2020-05-08'
+    futures = ['CU']
 
     data = Data(mat_path, google_path, array_name)
     mat_data, google_data = data.mat_data, data.google_data
@@ -98,8 +99,10 @@ if __name__ == "__main__":
     futuresPriceData = mat_data['StockMat-settle'].loc[start_time:end_time]
     scoreList = google_standard(googleData)
     # ----------输出-------------#
-    for cfear, words, price in result(futures, futuresData, futuresPriceData, scoreList, 20):
-        print(len(cfear), len(words), len(price))
+    for cfear, words, price, futureName, futureReturen in result(futures, futuresData, futuresPriceData, scoreList, 20):
+        print(len(cfear), len(words), len(price), futureName)
+        data = {'name':futureName, 'CFFEAR':cfear, 'WORDS':words, 'futurePrice':price ,'futureReturn': futureReturen,'windowLength': L}
+        pd.DataFrame(data).to_csv('../docs/CFEAR计算结果/' + futureName +'-windowL'+ str(L) +'.csv')
 
         # X = range(len(cfear))
         # plt.figure()
