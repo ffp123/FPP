@@ -53,6 +53,8 @@ class Data(object):
         mat_data['StockMat-settle']['date'] = mat_data['date']['date']
         mat_data['StockMat-rets'] = mat_data['StockMat-rets'].set_index('date')
         mat_data['StockMat-settle'] = mat_data['StockMat-settle'].set_index('date')
+        #print(mat_data['StockMat-rets'].isnull().sum())
+
         return mat_data
 
     def _get_google_data(self, google_path):
@@ -62,7 +64,10 @@ class Data(object):
         googleData_1['date'] = pd.to_datetime(googleData['date'])
         googleData = pd.merge(googleData_1, self.mat_data['date'], on='date')
         googleData = googleData.set_index('date')
-        print(googleData)
+        #print(googleData.isnull().sum())
+        googleData.dropna(inplace=True)
+
+        print('google:{}'.format(googleData.shape[0]) )
         return googleData
 
     def moving_mean(self, wordnames, data):

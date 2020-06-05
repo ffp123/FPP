@@ -60,6 +60,8 @@ def Cfear(futureData, scoreList, L):
 
         for word in scoreList:
             # print(len(word[i:i+L]))
+            #print('Futurelen: {}'.format(len(futureData[i:i + L])))
+            #print('googlelen: {}'.format(len(word[i:i + L])))
             est = sm.OLS(futureData[i:i + L], word[i:i + L]).fit()  # 需要保证关键词数据的起始时间点和return的起始时间点要相同
             # 后面接判断语句，t值或p值大于或小于阈值，则把参数选择出来，准备求和
             if abs(est.tvalues[0]) > 1.96:
@@ -83,26 +85,31 @@ def result(futures, futuresData, futuresPriceData, scoreList, L=20):
 
 if __name__ == "__main__":
     # -----------参数---------------#
-    L = 20  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
+    L = [20,40,60,80,100,120,140,160,180,200,220,240]  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
     CFEARLength = 3  # 想要计算CFEAR的长度,就是想要算多少天每天的CFEAR因子值，如果以天为单位就是CFEARLength个天的CFEAR因子值。后面使用 时间长度-时间窗口 来代替它
     mat_path = "model/FuturesDataCon.mat"
     array_name = {'StockMat': ['dtes', 'rets', "settle"]}
-    google_path = '../docs/google_trends/google_indexs.csv'
-    start_time = '2010-01-15'
+    google_path = '../docs/google_trends/google_trends_all_.csv'
+    start_time = '2010-01-18'
     end_time = '2020-05-08'
-    futures = ['CU']
+    futures = ['AL','CU','RU','A','M','CF','C','B','SR','Y','TA','ZN','L','P','AU','RB','V']
 
     data = Data(mat_path, google_path, array_name)
     mat_data, google_data = data.mat_data, data.google_data
     futuresData = mat_data['StockMat-rets'].loc[start_time:end_time]
+    print(futuresData)
     googleData = google_data.loc[start_time:end_time]
+    print(googleData)
     futuresPriceData = mat_data['StockMat-settle'].loc[start_time:end_time]
     scoreList = google_standard(googleData)
+    #print(futuresData.isnull().sum())
+    #pd.DataFrame(futuresData.isnull().sum()).to_csv('loss.csv')
     # ----------输出-------------#
-    for cfear, words, price, futureName, futureReturen in result(futures, futuresData, futuresPriceData, scoreList, 20):
-        print(len(cfear), len(words), len(price), futureName)
-        data = {'name':futureName, 'CFFEAR':cfear, 'WORDS':words, 'futurePrice':price ,'futureReturn': futureReturen,'windowLength': L}
-        pd.DataFrame(data).to_csv('../docs/CFEAR计算结果/' + futureName +'-windowL'+ str(L) +'.csv')
+    for l in L:
+        for cfear, words, price, futureName, futureReturen in result(futures, futuresData, futuresPriceData, scoreList, l):
+            print(len(cfear), len(words), len(price), futureName)
+            data = {'name':futureName, 'CFFEAR':cfear, 'WORDS':words, 'futurePrice':price ,'futureReturn': futureReturen,'windowLength': l}
+            pd.DataFrame(data).to_csv('../docs/CFEAR计算结果/' + futureName +'-windowL'+ str(l) +'.csv')
 
         # X = range(len(cfear))
         # plt.figure()
