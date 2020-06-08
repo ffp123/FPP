@@ -9,8 +9,8 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
-      <webServer id="8601b538-fcd2-4d39-97ca-e7e8e6e701c0" name="宁夏云" url="http://161.189.108.74">
-        <fileTransfer rootFolder="/home/ubuntu/Python/FPP" accessType="SFTP" sshConfigId="64b808b3-d283-49a8-aef9-406a4f9669ec" sshConfig="宁夏云">
+      <webServer id="8601b538-fcd2-4d39-97ca-e7e8e6e701c0" name="宁夏云" url="http://52.194.194.99">
+        <fileTransfer rootFolder="/home/ubuntu/Python/FPP" accessType="SFTP" host="161.189.170.51" port="22" sshConfigId="64b808b3-d283-49a8-aef9-406a4f9669ec" sshConfig="ubuntu@161.189.170.51:22 key" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

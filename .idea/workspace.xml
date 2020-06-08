@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Future_Price/loss.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/google_trends/google_trends_all_.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Future_Price/fileToSql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/CFEAR计算结果/AL-windowL20.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Future_Price/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Future_Price/readmat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/readmat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/CFEAR计算结果/CU-windowL20.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,8 +177,9 @@
   </component>
   <component name="SshConsoleOptionsProvider">
     <option name="myEncoding" value="UTF-8" />
-    <option name="myConnectionType" value="DEPLOYMENT_SERVER" />
-    <option name="myConnectionId" value="60a5fbf4-8b6b-4276-af62-60386baae897" />
+    <option name="myConnectionType" value="SSH_CONFIG" />
+    <option name="myConnectionId" value="东京云" />
+    <option name="myAdditionalData" value="f791fd03-a861-48b9-bd41-3b90b07d51be" />
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\tmoom\AppData\Roaming\Subversion</configuration>
@@ -240,7 +242,12 @@
       <workItem from="1591244565187" duration="2038000" />
       <workItem from="1591262228615" duration="1630000" />
       <workItem from="1591283116393" duration="663000" />
-      <workItem from="1591340242643" duration="370000" />
+      <workItem from="1591340242643" duration="2088000" />
+      <workItem from="1591345644957" duration="2365000" />
+      <workItem from="1591370447603" duration="830000" />
+      <workItem from="1591533005588" duration="1013000" />
+      <workItem from="1591535548390" duration="55000" />
+      <workItem from="1591579399274" duration="462000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
@@ -306,27 +313,43 @@
     <option name="LAST_COMMIT_MESSAGE" value="0425" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591309326865">
+    <state x="361" y="71" key="#Deployment" timestamp="1591341853933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591309326865" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591309326865">
+    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1591341853933" />
+    <state x="414" y="88" key="#Options" timestamp="1591341942347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591309326865" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591309326865">
+    <state x="414" y="88" key="#Options/0.0.1536.824@0.0.1536.824" timestamp="1591341942347" />
+    <state x="345" y="58" key="#SSH_Configurations" timestamp="1591340918528">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591309326865" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591309326865">
+    <state x="345" y="58" key="#SSH_Configurations/0.0.1536.824@0.0.1536.824" timestamp="1591340918528" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1591340879007">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591309326865" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591340879007" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591342336207">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591342336207" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591342336207">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591342336207" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591342336207">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591342336207" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591342336207">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591342336207" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FPP$demo.coverage" NAME="demo Coverage Results" MODIFIED="1588996742064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FPP/spiders/spider-BaiduIndex" />
     <SUITE FILE_PATH="coverage/FPP$baidubaike.coverage" NAME="baidubaike Coverage Results" MODIFIED="1586145716394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FPP/spiders" />
     <SUITE FILE_PATH="coverage/FPP$readmat.coverage" NAME="readmat Coverage Results" MODIFIED="1591262497300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Future_Price" />
-    <SUITE FILE_PATH="coverage/FPP$finance_googleIndex.coverage" NAME="finance_googleIndex Coverage Results" MODIFIED="1591283170837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Future_Price" />
+    <SUITE FILE_PATH="coverage/FPP$finance_googleIndex.coverage" NAME="finance_googleIndex Coverage Results" MODIFIED="1591341739011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Future_Price" />
   </component>
 </project>
