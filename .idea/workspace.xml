@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7af297a2-8063-4ab7-a49b-185b23fcc5f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/cnki.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FPP/spiders/ieee.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Future_Price/loss.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Future_Price/model/FuturesDataCon.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Future_Price/other.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmp2NPGbS/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmp3xHnCV/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmpCr5CO7/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmpYKLU5V/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmpcqithO/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmpiqSnU3/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmpoPu3sG/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmpwF78ZZ/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmpwoagnK/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NLP_Base/tmpyPdRyC/socket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/char_N_20190215.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/google_trends/google_trends_all_.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/期货文档/scrapy_items_result.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FPP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FPP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/FP_Sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/FP_Sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/finance_googleIndex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Future_Price/model/FuturesDataCon.mat" beforeDir="false" afterPath="$PROJECT_DIR$/docs/期货文档/FuturesDataCon.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Future_Price/readmat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/readmat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Future_Price/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Future_Price/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLP_Base/NER.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP_Base/NER.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/char_N_20190215.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/热词.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/待爬词汇/热词.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/sim_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sim_tool.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,17 +88,29 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -76,18 +126,6 @@
       <recent name="D:\study_data\graduate_content\Futures\FPP\docs\google_trends" />
       <recent name="D:\study_data\graduate_content\Futures\FPP\Future_Price\model" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.demo">
     <configuration name="baidubaike" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -146,8 +184,9 @@
   </component>
   <component name="SshConsoleOptionsProvider">
     <option name="myEncoding" value="UTF-8" />
-    <option name="myConnectionType" value="DEPLOYMENT_SERVER" />
-    <option name="myConnectionId" value="60a5fbf4-8b6b-4276-af62-60386baae897" />
+    <option name="myConnectionType" value="SSH_CONFIG" />
+    <option name="myConnectionId" value="宁夏云" />
+    <option name="myAdditionalData" value="7395994a-3bfa-4cc8-9037-379b0d738395" />
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\tmoom\AppData\Roaming\Subversion</configuration>
@@ -209,6 +248,10 @@
       <workItem from="1591000060038" duration="245000" />
       <workItem from="1591000406995" duration="868000" />
       <workItem from="1591005835038" duration="2014000" />
+      <workItem from="1591150648019" duration="1943000" />
+      <workItem from="1591576254886" duration="546000" />
+      <workItem from="1591577852063" duration="18703000" />
+      <workItem from="1591596849457" duration="12670000" />
     </task>
     <task id="LOCAL-00001" summary="结构爬取">
       <created>1585915984335</created>
@@ -242,20 +285,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -273,6 +315,40 @@
     <MESSAGE value="分词完成" />
     <MESSAGE value="0425" />
     <option name="LAST_COMMIT_MESSAGE" value="0425" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="872" y="358" key="#Deployment" timestamp="1591153345698">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="358" key="#Deployment/0.0.2560.1400@0.0.2560.1400" timestamp="1591153345698" />
+    <state x="1162" y="562" key="#Notifications" timestamp="1591576298830">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1162" y="562" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1591576298830" />
+    <state x="856" y="345" key="#SSH_Configurations" timestamp="1591153333410">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="856" y="345" key="#SSH_Configurations/0.0.2560.1400@0.0.2560.1400" timestamp="1591153333410" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1591150765343">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591150765343" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591580142671">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591580142671" />
+    <state x="1073" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591576396961">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1073" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591576396961" />
+    <state x="1078" y="599" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1591576375231">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1078" y="599" key="git4idea.remote.GitConfigureRemotesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591576375231" />
+    <state x="1145" y="573" key="publish.login" timestamp="1591150709796">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1145" y="573" key="publish.login/0.0.2560.1400@0.0.2560.1400" timestamp="1591150709796" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FPP$demo.coverage" NAME="demo Coverage Results" MODIFIED="1588996742064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FPP/spiders/spider-BaiduIndex" />

@@ -12,7 +12,7 @@ FUTURES = ['AL', 'CU', 'RU', 'A', 'WT', 'M', 'WS', 'CF', 'FU', 'C', 'B', 'SR', '
            'IH', 'ZC', 'CY', 'AP', 'SC', 'TS', 'SP', 'EG', 'CJ', 'UR', 'NR', 'RR', 'SS', 'EB', 'SA', 'PG']
 
 WORDS = ['2008 financial crisis', 'blizzard', 'China unemployment rate', 'climate change', 'cold', 'cold wave',
-         'cyclone', 'damp', 'drought', 'dry', 'Ebola', 'Ebola outbreak', 'Ebola virus', 'economic crisis',
+         'cyclone', 'damp', 'drought', 'dry', 'Ebola',  'economic crisis',
          'economic recession', 'financial crisis', 'Flood', 'forest fire', 'frost', 'global warming', 'gust', 'hail',
          'heat wave', 'heavy rain', 'high temperature', 'Middle East war', 'mountain fire', 'natural disasters',
          'oil crisis', 'oil stocks', 'pest', 'pests and diseases', 'rain', 'rainfall', 'snow', 'storm', 'strong wind',

@@ -5,7 +5,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="11">
+          <list size="21">
             <item index="0" class="java.lang.String" itemvalue="psycogreen" />
             <item index="1" class="java.lang.String" itemvalue="pytest" />
             <item index="2" class="java.lang.String" itemvalue="pytest-cov" />
@@ -17,6 +17,16 @@
             <item index="8" class="java.lang.String" itemvalue="Flask-SQLAlchemy" />
             <item index="9" class="java.lang.String" itemvalue="jieba" />
             <item index="10" class="java.lang.String" itemvalue="scikit_learn" />
+            <item index="11" class="java.lang.String" itemvalue="pandas" />
+            <item index="12" class="java.lang.String" itemvalue="mat4py" />
+            <item index="13" class="java.lang.String" itemvalue="gensim" />
+            <item index="14" class="java.lang.String" itemvalue="pytrends" />
+            <item index="15" class="java.lang.String" itemvalue="pkuseg" />
+            <item index="16" class="java.lang.String" itemvalue="matplotlib" />
+            <item index="17" class="java.lang.String" itemvalue="numpy" />
+            <item index="18" class="java.lang.String" itemvalue="scrapy_splash" />
+            <item index="19" class="java.lang.String" itemvalue="pyltp" />
+            <item index="20" class="java.lang.String" itemvalue="redis" />
           </list>
         </value>
       </option>

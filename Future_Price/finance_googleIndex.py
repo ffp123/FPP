@@ -5,13 +5,17 @@
 将谷歌搜索量数据先做log差 log(t+1)-log(t)，再将其标准化。
 得到的标准化数据和
 '''
+import multiprocessing
 import sys
+from io import StringIO
+
+import psycopg2
 
 sys.path.append("..")
 from Future_Price import *
 from Future_Price.config import FUTURES, WORDS
 from Future_Price.readmat import *
-from Future_Price.FP_Sql import FP_Save, FP_select
+from Future_Price.FP_Sql import FP_Save
 
 
 class Finance(object):
@@ -83,14 +87,31 @@ class Finance(object):
         return CFEARlist, wordslist
 
     def result(self):
-        for future in self.futures:
-            futureData = self.futuresData[future]
-            CFEARlist, wordslist = self.Cfear(futureData, self.scoreList, self.time_window)
-            data = {'date': list(self.futuresPriceData[future][self.time_window:].index),
-                    'future': [future] * len(wordslist),
-                    'cfear': CFEARlist, 'influence_factor': wordslist,
-                    'future_price': self.futuresPriceData[future][self.time_window:].tolist()}
-            yield pd.DataFrame(data)
+        detail = None
+        num = multiprocessing.cpu_count() - 1
+        p = multiprocessing.Pool(processes=num)
+        datas = p.map(self.single_process, self.futures)
+        p.close()
+        p.join()
+        detail = None
+        for _df in datas:
+            if detail is None:
+                detail = _df
+            else:
+                detail = pd.concat([detail, _df], ignore_index=True)
+        return detail
+
+        # yield pd.DataFrame(data)
+
+    def single_process(self, future):
+        futureData = self.futuresData[future]
+        CFEARlist, wordslist = self.Cfear(futureData, self.scoreList, self.time_window)
+        data = {'date': list(self.futuresPriceData[future][self.time_window:].index),
+                'future': [future] * len(wordslist),
+                'cfear': CFEARlist, 'influence_factor': wordslist,
+                'future_price': self.futuresPriceData[future][self.time_window:].to_list(),
+                'future_return': self.futuresData[future][self.time_window:].to_list()}
+        return pd.DataFrame(data)
 
 
 if __name__ == "__main__":
@@ -101,19 +122,48 @@ if __name__ == "__main__":
     # sql = "SELECT * FROM public.google_trends where geo='ALL';"
     # fp_select = FP_select(sql)
     # google_data = fp_select.get_google_trends()
-    time_window = 20  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
+    time_windows = [120, 140, 160, 180, 200, 220,
+                    240]  # L代表回溯时间长度，也是时间窗口的长度，如果以天为单位，就是过去L天的搜索量数据和return数据拿来做回归做计算CFEAR因子。
     # CFEARLength = 3  # 想要计算CFEAR的长度,就是想要算多少天每天的CFEAR因子值，如果以天为单位就是CFEARLength个天的CFEAR因子值。后面使用 时间长度-时间窗口 来代替它
-    futures = FUTURES
+    futures = ['AL', 'CU', 'RU', 'A', 'M', 'CF', 'C', 'B', 'SR', 'Y', 'TA', 'ZN', 'L', 'P', 'AU', 'RB', 'V']
     f_value = 1.96
-    time_interval = ['2011-01-01', '2011-05-01']
+    time_interval = ['2010-01-18', '2020-05-08']
     data = Data(mat_path, google_path, array_name)
+    for time_window in time_windows:
+        variable = {'futures': futures, 'influence_factors': WORDS, 'google_data_sources': 'US',
+                    'time_window': time_window,
+                    'f_value': f_value, 'time_interval': time_interval}
+        print(variable)
+        finance = Finance(data=data, time_window=time_window, f_value=f_value, time_interval=time_interval,
+                          futures=futures)
+        detail = finance.result()
+        print(detail)
+        postgres_connect = psycopg2.connect(host="161.189.170.51", port='12786', user="postgres", password="postgres",
+                                            dbname="FPP")
+        cur = postgres_connect.cursor()
+        cur.execute(
+            "INSERT INTO public.fp_variable( futures, influence_factors, google_data_sources, time_window, f_value, time_interval) VALUES(%s,%s,%s,%s,%s,%s) returning id",
+            (variable['futures'], variable['influence_factors'], variable['google_data_sources'],
+             variable['time_window'], variable['f_value'], variable['time_interval']))
+        v_id = cur.fetchone()[0]
+        print(v_id)
+        output = StringIO()
+        detail['v_id'] = [v_id] * len(detail)
 
-    variable = {'futures': futures, 'influence_factors': WORDS, 'google_data_sources': 'US', 'time_window': time_window,
-                'f_value': f_value, 'time_interval': time_interval}
-    finance = Finance(data=data, time_window=time_window, f_value=f_value, time_interval=time_interval, futures=futures)
-    # ----------数据入库------------#
-    fp_save = FP_Save(variable, finance.result())
-    fp_save.save_data()
+        detail.to_csv(output, sep='\t', index=False, header=False)
+        output1 = output.getvalue()
+        output1 = output1.replace('[', '{').replace(']', '}')
+        cur.copy_from(StringIO(output1), 'public.fp_detail',
+                           columns=['date', 'future', 'cfear', 'influence_factor', 'future_price', 'future_return',
+                                    'v_id'])
+
+        postgres_connect.commit()
+        cur.close()
+        postgres_connect.close()
+
+        # ----------数据入库------------#
+        # fp_save = FP_Save(variable, finance.result())
+        # fp_save.save_data()
     # ----------输出-------------#
     # for d in finance.result():
     #     print(d)

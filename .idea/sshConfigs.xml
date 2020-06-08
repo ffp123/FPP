@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="52.194.194.99" id="aabcbc39-04dd-4ea3-a470-e32e4e0bf2da" keyPath="C:\Users\86152\.ssh\aws-tokyo-2020may.pem" port="22" customName="东京云" nameFormat="CUSTOM" username="ubuntu" />
+      <sshConfig host="161.189.170.51" id="7395994a-3bfa-4cc8-9037-379b0d738395" keyPath="C:\Users\86152\.ssh\aws-ningxia-2020May.pem" port="22" customName="宁夏云" nameFormat="CUSTOM" username="ubuntu" />
+    </configs>
+  </component>
+</project>
