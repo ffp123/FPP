@@ -7,7 +7,7 @@ scipy==1.4.1
 statsmodels==0.11.1
 matplotlib==3.2.1
 pkuseg==0.0.22
-numpy==1.18.1
+numpy==1.22.0
 psycopg2==2.8.4
 requests==2.23.0
 gensim==3.8.2
